@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glyphein — analytical instruments for Power BI</title>
+<meta name="description" content="Glyphein builds analytical instruments for Power BI. Flow Globe draws origin-destination flows on a 3D globe from place names, with no network calls.">
+<link rel="stylesheet" href="assets/glyphein.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Glyphein — analytical instruments for Power BI">
+<meta property="og:description" content="Origin-destination flows on a 3D globe. Place names, not coordinates. No network calls.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://glyphein.eu/">
+</head>
+<body>
+
+<div class="enveloppe">
+
+  <header class="entete">
+    <a class="marque" href="/" aria-label="Glyphein — home">
+      <!-- Le G taillé au burin. Masse pleine, jamais en contour, jamais incliné (charte §02). -->
+      <svg width="34" height="34" viewBox="18 18 64 64" role="img" aria-hidden="true">
+        <mask id="g" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+          <path d="M37 18H63L82 37V63L63 82H37L18 63V37Z" fill="#fff"/>
+          <path d="M42.5 32H57.5L64 38.5L90 12.5V49.5H50V55.5L56 61.5H64L57.5 68H42.5L32 57.5V42.5Z" fill="#000"/>
+        </mask>
+        <rect width="100" height="100" fill="currentColor" mask="url(#g)" style="color:var(--accent)"/>
+      </svg>
+      <span class="mot">GLYPHEIN</span>
+    </a>
+    <nav class="pages">
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="incise"></div>
+
+  <main>
+    <h1>We engrave what your data says.</h1>
+    <p class="accroche">Glyphein builds analytical instruments for Power&nbsp;BI. Our first one draws
+    the flows inside a network — where they run, how far they sit from plan, and what depends
+    on what.</p>
+
+    <p><span class="capsule">Flow Globe — in development, coming to Microsoft AppSource</span></p>
+
+    <div class="incise"></div>
+
+    <h2>Glyphein Flow Globe</h2>
+    <p>An origin-destination map for Power&nbsp;BI, on a 3D globe or a flat map. You give it three
+    columns — where from, where to, how much — and it draws the network.</p>
+
+    <ul class="faits">
+      <li><strong>Place names, not coordinates.</strong> 32,000 cities, ports and countries are
+      geocoded inside the visual. You drop the names your data already contains; there is no
+      latitude column to build and no aggregation trap to work around.</li>
+
+      <li><strong>No network calls.</strong> No map tiles, no geocoding service, no telemetry, no
+      fonts fetched from a CDN. The visual declares no privileges and reaches nothing outside the
+      report. It works in tenants that block external services, and it keeps working offline.</li>
+
+      <li><strong>Automatic aggregation.</strong> Zoomed out, the map shows continent to continent.
+      Zoom in and it resolves to countries, then to cities — so two thousand routes read as a
+      network rather than a tangle.</li>
+
+      <li><strong>Variance to objective.</strong> Add a target column and the map stops showing
+      volume and starts showing drift: which corridors run under plan, by how much, and in which
+      direction. Never colour alone — every state carries a second channel.</li>
+    </ul>
+
+    <div class="incise"></div>
+
+    <h2>The name</h2>
+    <p><em>Glyphein</em> — γλύφειν, “to engrave, to carve”; said <em>gli-fine</em>. Where γράφειν
+    lays ink on a surface, γλύφειν takes material away. The sea charts and portolans of the 16th to
+    19th centuries were all cut with a burin on copper — a direct lineage, and we make maps. In the
+    lineage of Bertin, a glyph is the graphic mark that encodes a value: the name describes what the
+    product makes.</p>
+
+    <div class="plaque plaque--accent">
+      <h3 style="margin-top:0">Getting in touch</h3>
+      <p style="margin-bottom:0">Questions, bug reports and licensing:
+      <a href="mailto:support@glyphein.eu">support@glyphein.eu</a>. What we can and cannot help with
+      is set out on the <a href="/support/">support page</a>.</p>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <span>© 2026 Glyphein</span>
+    <span><a href="/support/">Support</a> · <a href="/privacy/">Privacy</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

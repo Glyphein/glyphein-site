@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Glyphein</title>
+<meta name="description" content="Glyphein Flow Globe makes no network requests and collects no data. This page states exactly what that means, and what little we hold when you write to us.">
+<link rel="stylesheet" href="../assets/glyphein.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<div class="enveloppe">
+
+  <header class="entete">
+    <a class="marque" href="/" aria-label="Glyphein — home">
+      <svg width="34" height="34" viewBox="18 18 64 64" role="img" aria-hidden="true">
+        <mask id="g" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+          <path d="M37 18H63L82 37V63L63 82H37L18 63V37Z" fill="#fff"/>
+          <path d="M42.5 32H57.5L64 38.5L90 12.5V49.5H50V55.5L56 61.5H64L57.5 68H42.5L32 57.5V42.5Z" fill="#000"/>
+        </mask>
+        <rect width="100" height="100" fill="currentColor" mask="url(#g)" style="color:var(--accent)"/>
+      </svg>
+      <span class="mot">GLYPHEIN</span>
+    </a>
+    <nav class="pages">
+      <a href="/support/">Support</a>
+      <a href="/privacy/" aria-current="page">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="incise"></div>
+
+  <main>
+    <h1>Privacy</h1>
+    <p class="accroche">The short version: the visual sends nothing anywhere, and this site sets no
+    cookies. The rest of this page says exactly what that means, so that you can verify it rather
+    than take our word for it.</p>
+
+    <div class="remplir">
+      <strong>À COMPLÉTER avant publication</strong> — identité du responsable de traitement :
+      raison sociale, forme juridique, numéro SIREN et adresse du siège. La page ne peut pas être
+      mise en ligne sans, et Partner Center la demandera à la soumission.
+    </div>
+
+    <h2>The visual collects nothing</h2>
+    <p>Glyphein Flow Globe runs entirely inside the Power&nbsp;BI report that hosts it. It has no
+    server, no account, and no way to reach us.</p>
+
+    <ul class="faits">
+      <li><strong>No network requests of any kind.</strong> No map tiles, no geocoding service, no
+      analytics endpoint, no error reporting, no update check. The visual declares
+      <code>privileges: []</code> in its manifest, which is the Power&nbsp;BI mechanism that would be
+      required for it to reach the network at all.</li>
+      <li><strong>Geocoding happens inside the package.</strong> The place names you supply are
+      matched against a table of cities, ports and countries embedded in the visual itself. Your
+      place names never leave the report.</li>
+      <li><strong>Fonts are embedded.</strong> The typefaces are shipped inside the package as
+      binary data, not fetched from a font CDN — so no third party learns that a report is being
+      opened, or by whom.</li>
+      <li><strong>No telemetry and no crash reporting.</strong> We have no measurement of how many
+      people use the visual, which features they use, or when it fails. This is a cost we accept
+      deliberately; the practical consequence is described on the
+      <a href="/support/">support page</a>.</li>
+    </ul>
+
+    <p>Your data stays where Power&nbsp;BI puts it. Glyphein is not a processor of it, because
+    Glyphein never receives it.</p>
+
+    <h2>You can verify this</h2>
+    <p>You do not have to believe us. Open the browser developer tools on a report page containing
+    the visual, look at the network tab, and interact with the globe: no request originates from it.
+    Microsoft applies the same check — refusing all external service access is one of the criteria a
+    visual must meet to be certified.</p>
+
+    <h2>This website</h2>
+    <ul class="faits">
+      <li><strong>No cookies.</strong> This site sets none, for any purpose, including analytics.</li>
+      <li><strong>No third-party requests.</strong> Fonts and styles are served from this domain.
+      There is no analytics script, no tag manager, no embedded video and no social widget.</li>
+      <li><strong>Server logs.</strong> Our hosting provider records the usual technical
+      information — IP address, date and time, page requested, user agent — for the operation and
+      security of the service. These logs are not used to profile visitors and are not combined with
+      anything else.</li>
+    </ul>
+
+    <h2>When you write to us</h2>
+    <p>If you send an email to <a href="mailto:support@glyphein.eu">support@glyphein.eu</a>, we hold
+    what you chose to send: your address, your message, and any attachment. We use it to answer you
+    and to fix what you reported, and for nothing else. We do not sell it, share it, or add it to a
+    mailing list.</p>
+    <p>Mail is hosted by Infomaniak Network SA, in Switzerland. Correspondence is kept for as long as
+    it is useful for support history, and at most three years after the last exchange, after which it
+    is deleted.</p>
+    <p>Please do not attach your business data. If reproducing a problem requires a dataset, we will
+    ask you for an anonymised extract instead.</p>
+
+    <h2>Purchases</h2>
+    <p>Licences for paid features are sold through Microsoft AppSource. Microsoft is the merchant of
+    record: it handles the transaction, the billing details and the payment instrument, and Glyphein
+    never sees them. Microsoft's own privacy statement governs that part of the relationship.</p>
+
+    <h2>Your rights</h2>
+    <p>Under the General Data Protection Regulation you may ask for access to the personal data we
+    hold about you, its correction or its deletion, and you may object to its processing. In practice
+    this concerns your correspondence with us and nothing else. Write to
+    <a href="mailto:support@glyphein.eu">support@glyphein.eu</a> and we will answer within one month.</p>
+    <p>If you consider that your rights are not being respected, you may lodge a complaint with the
+    CNIL, the French data protection authority, at <a href="https://www.cnil.fr">cnil.fr</a>.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the date below changes with it and the previous version stays
+    available on request. We will not quietly start collecting something.</p>
+
+    <div class="incise"></div>
+
+    <p class="fin">Version 1 — 5 September 2026.</p>
+    <p class="fin">This page describes what the software and this site actually do, verified against
+    the source code. It is not legal advice; if your organisation requires a specific form of
+    statement, ask and we will provide what we can.</p>
+  </main>
+
+  <footer class="pied">
+    <span>© 2026 Glyphein</span>
+    <span><a href="/">Home</a> · <a href="/support/">Support</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

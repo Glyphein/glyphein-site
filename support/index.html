@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Glyphein</title>
+<meta name="description" content="How to get help with Glyphein Flow Globe: contact, what to include in a report, and what is and is not supported.">
+<link rel="stylesheet" href="../assets/glyphein.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<div class="enveloppe">
+
+  <header class="entete">
+    <a class="marque" href="/" aria-label="Glyphein — home">
+      <svg width="34" height="34" viewBox="18 18 64 64" role="img" aria-hidden="true">
+        <mask id="g" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+          <path d="M37 18H63L82 37V63L63 82H37L18 63V37Z" fill="#fff"/>
+          <path d="M42.5 32H57.5L64 38.5L90 12.5V49.5H50V55.5L56 61.5H64L57.5 68H42.5L32 57.5V42.5Z" fill="#000"/>
+        </mask>
+        <rect width="100" height="100" fill="currentColor" mask="url(#g)" style="color:var(--accent)"/>
+      </svg>
+      <span class="mot">GLYPHEIN</span>
+    </a>
+    <nav class="pages">
+      <a href="/support/" aria-current="page">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="incise"></div>
+
+  <main>
+    <h1>Support</h1>
+    <p class="accroche">One address, one person behind it, and an honest description of what that
+    means.</p>
+
+    <div class="plaque plaque--accent">
+      <h3 style="margin-top:0">Contact</h3>
+      <p style="margin-bottom:0"><a href="mailto:support@glyphein.eu">support@glyphein.eu</a> — in
+      English or in French.</p>
+    </div>
+
+    <h2>What to expect</h2>
+    <p>Glyphein is a small independent publisher. Messages are usually answered within a few working
+    days. <strong>There is no service level agreement and no guaranteed resolution time</strong>, and
+    we would rather say so plainly than promise something we cannot hold. If a message matters to a
+    deadline, say so in the subject line.</p>
+
+    <h2>Reporting a problem</h2>
+    <p>The visual sends us nothing — no telemetry, no crash reports, no usage data. That is a
+    deliberate design decision, described on the <a href="/privacy/">privacy page</a>. It also means
+    <strong>we only know about a problem if you tell us</strong>. The more of the following you can
+    include, the faster it goes:</p>
+
+    <ul class="faits">
+      <li><strong>The version of the visual.</strong> It appears in the Diagnostics panel inside the
+      visual, and in the file name of the package you installed.</li>
+      <li><strong>Where it happened.</strong> Power BI Desktop or the Power BI Service, edit mode or
+      reading mode, and your browser if it is the Service.</li>
+      <li><strong>The shape of the data.</strong> Which fields you placed in which wells, roughly how
+      many rows and how many distinct routes. Not the data itself — see below.</li>
+      <li><strong>What you expected and what you saw.</strong> A screenshot is worth more than a
+      description, and it does not have to show real values.</li>
+    </ul>
+
+    <h2>Please do not send us your data</h2>
+    <p>We do not want it and we do not need it. If a problem can only be reproduced with a specific
+    dataset, tell us and we will work out together how to build an anonymised extract that shows the
+    same behaviour — usually a handful of rows with the names changed.</p>
+
+    <h2>Environments</h2>
+    <p>Flow Globe is built for Power&nbsp;BI Desktop and the Power&nbsp;BI Service. It renders with
+    Canvas 2D and makes no network requests, so it does not depend on map tile availability or on
+    any external geocoding service.</p>
+    <p>If you use Power&nbsp;BI Report Server, Publish to Web, Power&nbsp;BI Embedded, or a national
+    or government cloud, write to us before you deploy — these environments behave differently and we
+    would rather tell you what to expect than have you find out in production.</p>
+
+    <h2>Documentation</h2>
+    <p>Product documentation will be published here alongside the first AppSource release. Until
+    then, ask by email — questions asked before there is a manual are how the manual gets written.</p>
+
+    <div class="incise"></div>
+
+    <p class="fin">Last updated 5 September 2026.</p>
+  </main>
+
+  <footer class="pied">
+    <span>© 2026 Glyphein</span>
+    <span><a href="/">Home</a> · <a href="/privacy/">Privacy</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

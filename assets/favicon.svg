@@ -1,0 +1,10 @@
+<!-- Glyphein — monogramme, le G taillé au burin. Givre #85AEE4 sur monde sombre (charte §02). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="18 18 64 64">
+<defs>
+<mask id="g" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+<path d="M37 18H63L82 37V63L63 82H37L18 63V37Z" fill="#fff"/>
+<path d="M42.5 32H57.5L64 38.5L90 12.5V49.5H50V55.5L56 61.5H64L57.5 68H42.5L32 57.5V42.5Z" fill="#000"/>
+</mask>
+</defs>
+<rect width="100" height="100" fill="#85AEE4" mask="url(#g)"/>
+</svg>
