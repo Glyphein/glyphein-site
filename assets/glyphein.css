@@ -1,7 +1,9 @@
 /* ══════════════════════════════════════════════════════════════════════════════
    Glyphein — feuille de style du site.
 
-   Autorité : brand/charte-glyphein-v4.md (v4.1) et brand/glyphein-tokens.json.
+   Autorité : brand/charte-glyphein-v4.md (v4.1). Elle est SEULE — glyphein-tokens.json,
+   cité ici jusqu'au 07/09/2026, était resté en v3 et a été supprimé ; ce qu'il portait
+   seul (brume, acier, ardoise) est passé au §07 de la charte.
    Registre : LA MARQUE S'EXPRIME (charte §10). Le site peut porter l'angle plus
    franchement que le chrome in-visual, qui lui se retient.
 
@@ -22,8 +24,8 @@
    ══════════════════════════════════════════════════════════════════════════ */
 
 /* ─── 01 · Jetons (charte §07) ─────────────────────────────────────────────
-   Palette et géométries recopiées de glyphein-tokens.json. Ne pas inventer
-   de valeur ici : toute couleur nouvelle doit d'abord exister dans la charte. */
+   Palette et géométries recopiées du §07 de la charte. Ne pas inventer de valeur
+   ici : toute couleur nouvelle doit d'abord exister dans la charte. */
 :root {
   /* Palette */
   --nuit: #070B12;   --encre: #101826;   --encre-claire: #182238;  --minuit: #0E1420;
