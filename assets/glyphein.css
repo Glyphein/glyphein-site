@@ -32,6 +32,7 @@
   --givre: #85AEE4;  --givre-pale: #E9EDF3;
   --cobalt: #3E6AB0; --cobalt-sombre: #2E5288;
   --craie: #EEF1F6;  --ardoise: #3A4150; --acier: #7C8698;         --brume: #C4CEDC;
+  --plomb: #656E83;  --blanc: #FFFFFF;  --papier: #F7F8FA;   /* §07 : tertiaire clair, surfaces claires */
   --positif: #30B579; --negatif: #E06456; --alerte: #D9A13B;
 
   /* Rôles — monde sombre, forme canonique de la marque */
@@ -49,9 +50,9 @@
   --arete: rgba(133, 174, 228, .13);          /* filet de séparation */
   --ombre: 0 10px 30px rgba(0, 0, 0, .38);
   --ombre-basse: 0 4px 14px rgba(0, 0, 0, .26);
-  --taille-haut: #1B2740;                     /* la facette éclairée de la plaque */
+  --taille-haut: var(--encre-claire);         /* la facette éclairée de la plaque */
   --taille-face: var(--encre);                /* sa face                          */
-  --taille-tranche: #04070C;                  /* l'ombre qu'elle porte            */
+  --taille-tranche: rgba(0, 0, 0, .38);       /* l'ombre qu'elle porte — la charte la veut noire */
   --creux-haut: rgba(0, 0, 0, .34);           /* trait incisé : arête haute */
   --creux-bas: var(--limbe);                  /* trait incisé : arête basse */
 
@@ -80,11 +81,11 @@
 @media (prefers-color-scheme: light) {
   :root {
     --fond: var(--craie);
-    --surface: #FFFFFF;
-    --surface-haute: #F5F8FC;
+    --surface: var(--blanc);
+    --surface-haute: var(--papier);
     --encre-texte: var(--nuit);
     --encre-2: var(--ardoise);
-    --encre-3: #667085;
+    --encre-3: var(--plomb);                  /* 4,51:1 sur Craie — le plancher tient AA */
     --accent: var(--cobalt);
     --accent-sourd: var(--cobalt-sombre);
     --limbe: rgba(62, 106, 176, .20);
@@ -93,8 +94,8 @@
     --arete: rgba(20, 32, 54, .10);
     --ombre: 0 8px 26px rgba(20, 32, 54, .11);
     --ombre-basse: 0 3px 12px rgba(20, 32, 54, .07);
-    --taille-haut: #FFFFFF;
-    --taille-face: #E8EEF6;
+    --taille-haut: var(--blanc);
+    --taille-face: var(--givre-pale);
     --taille-tranche: rgba(20, 32, 54, .17);
     --creux-haut: rgba(20, 32, 54, .14);
     --creux-bas: rgba(255, 255, 255, .92);
