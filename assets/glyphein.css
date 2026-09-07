@@ -182,7 +182,9 @@ p:last-child { margin-bottom: 0; }
 strong { font-weight: 600; color: var(--encre-texte); }
 em { font-style: italic; }
 
-small, .fin { font-size: 14px; line-height: 1.6; color: var(--encre-3); }
+/* Une phrase à lire est en encre-2, jamais en encre-3 : l'encre tertiaire marque
+   l'absence et le repère, pas le texte courant. Règle du produit, tenue ici aussi. */
+small, .fin { font-size: 14px; line-height: 1.6; color: var(--encre-2); }
 
 code {
   font: 500 .875em/1.4 ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
