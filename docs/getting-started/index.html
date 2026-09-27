@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting started — Flow Globe manual · Glyphein</title>
+<meta name="description" content="Add Glyphein Flow Globe to a Power BI report and draw a first origin-destination map.">
+<link rel="stylesheet" href="/assets/glyphein.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#070B12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)">
+</head>
+<body>
+<div class="page">
+<div class="enveloppe">
+
+  <header class="entete">
+    <a class="marque" href="/" aria-label="Glyphein — home">
+      <svg width="34" height="34" viewBox="18 18 64 64" role="img" aria-hidden="true">
+        <mask id="mq" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+          <path d="M37 18H63L82 37V63L63 82H37L18 63V37Z" fill="#fff"/>
+          <path d="M42.5 32H57.5L64 38.5L90 12.5V49.5H50V55.5L56 61.5H64L57.5 68H42.5L32 57.5V42.5Z" fill="#000"/>
+        </mask>
+        <rect width="100" height="100" fill="currentColor" mask="url(#mq)"/>
+      </svg>
+      <span class="mot">GLYPHEIN</span>
+    </a>
+    <nav class="pages">
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/" aria-current="page">Docs</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="docs">
+<nav class="sommaire" aria-label="Manual"><p>Flow Globe manual</p><ol><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/" aria-current="page">Getting started</a></li><li><a href="/docs/data/">Your data</a></li><li><a href="/docs/views/">The views</a></li><li><a href="/docs/map/">Map and cards</a></li><li><a href="/docs/places/">Place names</a></li><li><a href="/docs/settings/">Settings</a></li><li><a href="/docs/troubleshooting/">Notices and diagnostics</a></li></ol></nav>
+      <article class="docs__corps">
+        <h1>Getting started</h1>
+        <p class="accroche">Add Flow Globe to a report, place three fields, and read the map.</p>
+        <div class="prose">
+
+<h2>Add the visual to a report</h2>
+<p>Once Flow Globe is published, it is added like any visual from Microsoft AppSource: in the
+<strong>Visualizations</strong> pane, choose <strong>Get more visuals</strong> and search for
+<em>Glyphein Flow Globe</em>.</p>
+<p>If you were sent a <code>.pbiviz</code> file, choose <strong>Import a visual from a file</strong>
+in the same menu instead. The visual's icon then appears in the Visualizations pane; click it to
+place an empty Flow Globe on the page.</p>
+
+<h2>Draw a first map</h2>
+<p>Three fields are enough:</p>
+<ol>
+  <li><strong>Origin</strong> — a column of place names: countries, cities, ports or ISO codes.</li>
+  <li><strong>Destination</strong> — the same, for where each flow arrives.</li>
+  <li><strong>Value</strong> — a measure, such as a sum of amounts, tonnes or shipments. It sets the
+  thickness of each flow.</li>
+</ol>
+<p>The map appears as soon as Origin and Destination are filled. Without a Value, each row Power&nbsp;BI
+sends — one per distinct combination of the fields — counts as one, and the visual asks for a measure. Places are found by name inside the visual — there is
+no latitude or longitude to prepare. The chapter <a href="/docs/places/">Place names</a> explains how.</p>
+<figure class="cliche">
+  <img src="/assets/img/flow-globe/globe-light.webp" alt="Flow Globe on a globe, light theme, with flows converging on the Netherlands and a legend listing four transport modes and the thickness range." width="1400" height="860" loading="lazy" decoding="async">
+  <figcaption>A first map, light theme: Origin, Destination, Value, and a Category to colour the flows.</figcaption>
+</figure>
+
+<h2>What you are looking at</h2>
+<dl>
+  <dt>Arcs</dt><dd>One per origin–destination pair. Thickness is the value; the legend gives the range.
+  Small particles travel along each arc to show its direction.</dd>
+  <dt>Places</dt><dd>A marker at each end. Its size is the place's total activity — everything that
+  leaves it and arrives at it.</dd>
+  <dt>Legend</dt><dd>Bottom right. It says what colour and thickness mean in the current view. The
+  arrow at its top collapses it.</dd>
+  <dt>Level</dt><dd>Zoomed out, flows are grouped by country, or by continent; zoom in and they
+  resolve to cities and ports. Country labels are written in capitals.</dd>
+</dl>
+
+<h2>The controls</h2>
+<p>The controls sit along the bottom edge, so that the map keeps the whole frame; zoom is on the
+right edge, and notices appear at the top left.</p>
+<div class="tableau-cadre"><table class="tableau">
+<thead><tr><th scope="col">Control</th><th scope="col">What it does</th></tr></thead>
+<tbody>
+<tr><td>View buttons</td><td>Bottom left. <strong>Value</strong>, then <strong>Variance to objective</strong> and <strong>What changed</strong>, then one button per extra field. A view whose field is missing is shown greyed, with the reason. See <a href='/docs/views/'>The views</a>.</td></tr>
+<tr><td>Options</td><td>The sliders icon after the view buttons. Routes shown, minimum value, bundling, theme, level of detail, language, layers — and the Diagnostics panel. See <a href='/docs/settings/'>Settings</a>.</td></tr>
+<tr><td>Hide controls</td><td>The eye, bottom right. Hides the controls for a clean screenshot; click again to bring them back.</td></tr>
+<tr><td>Search</td><td>The magnifier. Type a place or a flow to find it, select it and centre the map on it.</td></tr>
+<tr><td>Bundle</td><td>Gathers flows that share an endpoint and a heading onto a common trunk, and ungroups them.</td></tr>
+<tr><td>3D | 2D</td><td>Globe or flat map.</td></tr>
+<tr><td>+ and −</td><td>Zoom in and out. On the right edge.</td></tr>
+</tbody></table></div>
+<p>On the map itself: drag to turn the globe or move the flat map, scroll to zoom. Hover a flow or
+a place for its figures; click it for the full card. Clicking also selects it, which filters the
+other visuals on the page — see <a href="/docs/map/">Map and cards</a>.</p>
+<div class="note"><strong>When the visual is narrow,</strong> controls give way one after the other, least useful first. The Options button is always the last to go.</div>
+
+<h2>Next steps</h2>
+<ul>
+  <li>Add an <strong>Objective</strong> measure to see which corridors run under plan.</li>
+  <li>Add a <strong>Previous value</strong> measure to see what appeared, went, grew or shrank.</li>
+  <li>Add a <strong>Category</strong>, such as a transport mode or a carrier, to colour the flows.</li>
+</ul>
+<p><a href="/docs/data/">Your data</a> describes every field well.</p>
+
+        </div>
+<nav class="suite" aria-label="Chapters"><a href="/docs/"><span>Previous</span>Overview</a><a href="/docs/data/" style="text-align:right"><span>Next</span>Your data</a></nav>
+      </article>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <span>© 2026 Glyphein · last updated 27 September 2026</span>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/">Docs</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </footer>
+
+</div>
+</div>
+</body>
+</html>

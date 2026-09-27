@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notices and diagnostics — Flow Globe manual · Glyphein</title>
+<meta name="description" content="Notices, diagnostics and troubleshooting for Glyphein Flow Globe.">
+<link rel="stylesheet" href="/assets/glyphein.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#070B12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)">
+</head>
+<body>
+<div class="page">
+<div class="enveloppe">
+
+  <header class="entete">
+    <a class="marque" href="/" aria-label="Glyphein — home">
+      <svg width="34" height="34" viewBox="18 18 64 64" role="img" aria-hidden="true">
+        <mask id="mq" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+          <path d="M37 18H63L82 37V63L63 82H37L18 63V37Z" fill="#fff"/>
+          <path d="M42.5 32H57.5L64 38.5L90 12.5V49.5H50V55.5L56 61.5H64L57.5 68H42.5L32 57.5V42.5Z" fill="#000"/>
+        </mask>
+        <rect width="100" height="100" fill="currentColor" mask="url(#mq)"/>
+      </svg>
+      <span class="mot">GLYPHEIN</span>
+    </a>
+    <nav class="pages">
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/" aria-current="page">Docs</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="docs">
+<nav class="sommaire" aria-label="Manual"><p>Flow Globe manual</p><ol><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/data/">Your data</a></li><li><a href="/docs/views/">The views</a></li><li><a href="/docs/map/">Map and cards</a></li><li><a href="/docs/places/">Place names</a></li><li><a href="/docs/settings/">Settings</a></li><li><a href="/docs/troubleshooting/" aria-current="page">Notices and diagnostics</a></li></ol></nav>
+      <article class="docs__corps">
+        <h1>Notices and diagnostics</h1>
+        <p class="accroche">What each notice means, how to read the Diagnostics panel, and answers to common questions.</p>
+        <div class="prose">
+
+<p>Flow Globe never drops data without saying so. A notice appears at the top left of the visual;
+click the panel to read it in full, with the rows concerned and what to do.</p>
+
+<h2>Notices</h2>
+<div class="tableau-cadre"><table class="tableau">
+<thead><tr><th scope="col">Notice</th><th scope="col">Meaning and remedy</th></tr></thead>
+<tbody>
+<tr><td>Add Origin, Destination and a Value to draw flows.</td><td>A required field is missing.</td></tr>
+<tr><td>Add a Value measure to size the flows.</td><td>Each distinct combination of the fields counts as one until a Value is added.</td></tr>
+<tr><td>N unrecognised places</td><td>These names were not found. Use a country, city, port or ISO code, or coordinates. See <a href='/docs/places/'>Place names</a>.</td></tr>
+<tr><td>N shared place names</td><td>Several real places share these names; the largest was used. Add the country or the coordinates to pick another.</td></tr>
+<tr><td>N places outside the given country or region</td><td>The country column contradicts the place found. Correct it, or give coordinates.</td></tr>
+<tr><td>Render limit reached</td><td>More flows than the render limit. The largest are drawn. Raise the limit in the Format pane, or filter the report.</td></tr>
+<tr><td>Row cap reached</td><td>The data is larger than what Power BI sends to the visual. Filter the report or remove unused columns from the wells.</td></tr>
+<tr><td>N rows have a Value that is not a number</td><td>Counted as 0. Usually a division by zero in the measure.</td></tr>
+<tr><td>N rows have no origin or no destination</td><td>Left out. Fill in both ends, or give their coordinates.</td></tr>
+<tr><td>N rows with unusable coordinates</td><td>Out of range, or not numbers. Use decimal degrees within ±90 / ±180.</td></tr>
+<tr><td>N routes have an objective on only part of their rows</td><td>Treated as having no objective. Give an objective to every row of those routes, or to none.</td></tr>
+<tr><td>Every row goes from a place to itself</td><td>Origin and Destination probably hold the same field. Check the wells.</td></tr>
+<tr><td>At the “Countries” level, every flow stays inside a single place</td><td>All flows are internal at this level. Choose a finer level in Group by, or switch Display mode to Auto.</td></tr>
+<tr><td>No flow matches the current filters.</td><td>Minimum value is above every flow. Lower it.</td></tr>
+<tr><td>Some views need a licence — showing values instead. No data is hidden.</td><td>Shown to readers whose licence does not cover the Premium views. The report falls back to the Value view.</td></tr>
+</tbody></table></div>
+
+<h2>The Diagnostics panel</h2>
+<p>Open <strong>Options</strong> and choose <strong>Diagnostics</strong>. The panel shows the
+version of the visual and counts what happened to your data, line by line:</p>
+<div class="tableau-cadre"><table class="tableau">
+<thead><tr><th scope="col">Line</th><th scope="col">What it counts</th></tr></thead>
+<tbody>
+<tr><td>Input rows</td><td>Rows received from Power BI, with those merged into a single flow and those going from a place to itself.</td></tr>
+<tr><td>Valid routes / Rendered routes</td><td>Flows found, and flows drawn.</td></tr>
+<tr><td>Hidden (render limit) / Filtered</td><td>Flows left out by the render limit, and by your filters.</td></tr>
+<tr><td>Share of volume shown</td><td>The part of the total the map is showing.</td></tr>
+<tr><td>Unresolved places</td><td>Names not found, listed.</td></tr>
+<tr><td>Outside the given country or region</td><td>Places that contradict their country column.</td></tr>
+<tr><td>Rows with no origin or no destination</td><td>Rows left out.</td></tr>
+<tr><td>Reciprocal flows · Bundling · Unique categories</td><td>How many of each.</td></tr>
+<tr><td>Cross-highlight · Selection</td><td>What the report sent to the visual, and what the visual sent back.</td></tr>
+</tbody></table></div>
+<p>When you write to support, the version and a screenshot of this panel are the most useful things
+you can send.</p>
+
+<h2>Common questions</h2>
+<dl>
+  <dt>A flow I expect is not on the map.</dt>
+  <dd>Check, in this order: a notice about unrecognised places; <em>Routes shown</em>, <em>Minimum
+  value</em> and <em>Cover % of volume</em> in Options; the render limit; and the level of detail — two
+  cities of the same country make no arc at country level.</dd>
+  <dt>The numbers are larger than in my table.</dt>
+  <dd>A measure that should be averaged — a stock, a rate — is being summed. Set its aggregation to
+  Average in the well. See <a href="/docs/data/">Your data</a>.</dd>
+  <dt>A view button is greyed.</dt>
+  <dd>Its field is missing: hover the button to read which one. For a reader, it may also be a view
+  their licence does not include.</dd>
+  <dt>The map reframes when I click.</dt>
+  <dd>Turn on <strong>Lock view</strong> in Options, or turn off <em>Fit on selection</em> in the
+  Format pane card <em>Camera</em>.</dd>
+  <dt>A place is on the wrong continent.</dt>
+  <dd>Its name is shared by several places. Add the country column, or write <code>City, Country</code>.</dd>
+  <dt>Can I use it in Report Server, Publish to Web or Embedded?</dt>
+  <dd>Write to us before you deploy: these environments behave differently, and we would rather tell
+  you what to expect. See the <a href="/support/">support page</a>.</dd>
+</dl>
+
+        </div>
+<nav class="suite" aria-label="Chapters"><a href="/docs/settings/"><span>Previous</span>Settings</a><span></span></nav>
+      </article>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <span>© 2026 Glyphein · last updated 27 September 2026</span>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/">Docs</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </footer>
+
+</div>
+</div>
+</body>
+</html>

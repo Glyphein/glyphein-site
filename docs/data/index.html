@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your data — Flow Globe manual · Glyphein</title>
+<meta name="description" content="Field wells of Glyphein Flow Globe: Origin, Destination, Value, Objective, Previous value, Category, coordinates and more.">
+<link rel="stylesheet" href="/assets/glyphein.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#070B12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)">
+</head>
+<body>
+<div class="page">
+<div class="enveloppe">
+
+  <header class="entete">
+    <a class="marque" href="/" aria-label="Glyphein — home">
+      <svg width="34" height="34" viewBox="18 18 64 64" role="img" aria-hidden="true">
+        <mask id="mq" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+          <path d="M37 18H63L82 37V63L63 82H37L18 63V37Z" fill="#fff"/>
+          <path d="M42.5 32H57.5L64 38.5L90 12.5V49.5H50V55.5L56 61.5H64L57.5 68H42.5L32 57.5V42.5Z" fill="#000"/>
+        </mask>
+        <rect width="100" height="100" fill="currentColor" mask="url(#mq)"/>
+      </svg>
+      <span class="mot">GLYPHEIN</span>
+    </a>
+    <nav class="pages">
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/" aria-current="page">Docs</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="docs">
+<nav class="sommaire" aria-label="Manual"><p>Flow Globe manual</p><ol><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/data/" aria-current="page">Your data</a></li><li><a href="/docs/views/">The views</a></li><li><a href="/docs/map/">Map and cards</a></li><li><a href="/docs/places/">Place names</a></li><li><a href="/docs/settings/">Settings</a></li><li><a href="/docs/troubleshooting/">Notices and diagnostics</a></li></ol></nav>
+      <article class="docs__corps">
+        <h1>Your data</h1>
+        <p class="accroche">What goes in each field well, how the rows you give become flows on the map, and where the limits are.</p>
+        <div class="prose">
+
+<h2>The field wells</h2>
+<div class="tableau-cadre"><table class="tableau">
+<thead><tr><th scope="col">Well</th><th scope="col">Takes</th><th scope="col">What it does</th></tr></thead>
+<tbody>
+<tr><td>Origin</td><td>Place name</td><td>Required. Where each flow leaves from: a country, city or port name, or an ISO code.</td></tr>
+<tr><td>Destination</td><td>Place name</td><td>Required. Where each flow arrives.</td></tr>
+<tr><td>Value</td><td>Measure</td><td>Sizes the thickness of each flow. Without it, each distinct combination of the fields counts as one.</td></tr>
+<tr><td>Objective</td><td>Measure</td><td>Enables the <strong>Variance to objective</strong> view.</td></tr>
+<tr><td>Previous value</td><td>Measure</td><td>Enables the <strong>What changed</strong> view: appeared, gone, up, down or stable.</td></tr>
+<tr><td>Category</td><td>Column</td><td>Colours the flows in the Value view — a transport mode, a carrier, a product line.</td></tr>
+<tr><td>Tooltips</td><td>Measures</td><td>Extra figures shown in the hover and click cards of each flow. As many as you like.</td></tr>
+<tr><td>Origin latitude, Origin longitude,<br>Destination latitude, Destination longitude</td><td>Column</td><td>Optional. Exact coordinates. When they are given, they place the point; the name is only used as a label.</td></tr>
+<tr><td>Origin country, Destination country</td><td>Column</td><td>Optional. Your existing country column, to tell apart places that share a name — Toledo in Spain or in Ohio. No need to merge it into the name.</td></tr>
+<tr><td>Origin display name, Destination display name</td><td>Column</td><td>Optional. The label to <em>show</em>. It is never used to locate the place: keep a technical code in Origin and put the readable name here.</td></tr>
+<tr><td>Extra measures (max 2)</td><td>Measures</td><td>Each one adds a view, named after it, in which that measure sets the colour — or, for a quantity, the thickness.</td></tr>
+<tr><td>Extra categories (max 2)</td><td>Columns</td><td>Each one adds a view in which colour follows that column.</td></tr>
+</tbody></table></div>
+
+<h2>How rows become flows</h2>
+<p>Every row that has an origin and a destination is part of a flow. Rows with the same origin and
+the same destination are added together into <strong>one</strong> arc: their values, objectives and
+previous values are summed. At country or continent level, all the cities of a country merge the
+same way. The Diagnostics panel counts how many rows were merged at the current level.</p>
+<ul>
+  <li><strong>A row from a place to itself</strong> draws no arc; its value counts in that place's
+  activity, shown as <em>Internal</em> in the place card.</li>
+  <li><strong>A row with no origin or no destination</strong> is left out, and a notice says how many.</li>
+  <li><strong>A Value that is not a number</strong> — the result of a division by zero, for instance —
+  is counted as 0, and a notice names the rows.</li>
+  <li><strong>An objective present on only some rows of a flow</strong> is not used for that flow: it
+  is treated as having no objective, and the card says <em>Partial — not used</em>.</li>
+</ul>
+
+<h2>Measures that should not be added up</h2>
+<p>The visual receives what Power&nbsp;BI aggregates. A stock level, a rate or an average
+must not be summed across rows: in the well, open the field's menu and choose <strong>Average</strong>
+(or write a measure that computes it). For extra measures, the <strong>Measure type</strong> setting
+also tells the visual how to combine them — see <a href="/docs/views/">The views</a>.</p>
+
+<h2>A previous value, in DAX</h2>
+<p>The Previous value well takes a measure, usually the same measure over an earlier period. With
+a date table marked as such, last year's value for the same filters is:</p>
+<p><code>Previous value = CALCULATE ( [Value], SAMEPERIODLASTYEAR ( 'Date'[Date] ) )</code></p>
+<p>Any period works — last month, last quarter, a budget version — as long as it is a measure. The
+report's own date slicer then sets both periods at once.</p>
+
+<h2>Limits</h2>
+<ul>
+  <li><strong>Rows.</strong> Power&nbsp;BI limits how many rows it sends to a visual. A row is one combination of every column placed in the wells — Origin, Destination, Category, coordinates,
+  country and display-name columns, extra categories. Each column you add can multiply the rows, so
+  keep only the ones you use. When not all the data could be loaded, the visual says so.</li>
+  <li><strong>Flows drawn.</strong> By default the 2,000 largest flows are drawn. The <em>Render
+  limit</em> in the Format pane goes up to 30,000; beyond it, a notice says how many flows were left
+  out, and the largest are always the ones kept.</li>
+  <li><strong>Extra fields.</strong> Two extra measures and two extra categories at most.</li>
+</ul>
+<div class="note"><strong>A lighter model is a faster report.</strong> Every field in a well is sent to the visual and repeated in every selection it makes. A column you do not need on the map belongs in a Tooltips measure or in another visual.</div>
+
+        </div>
+<nav class="suite" aria-label="Chapters"><a href="/docs/getting-started/"><span>Previous</span>Getting started</a><a href="/docs/views/" style="text-align:right"><span>Next</span>The views</a></nav>
+      </article>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <span>© 2026 Glyphein · last updated 27 September 2026</span>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/">Docs</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </footer>
+
+</div>
+</div>
+</body>
+</html>

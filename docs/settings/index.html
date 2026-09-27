@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings — Flow Globe manual · Glyphein</title>
+<meta name="description" content="Settings of Glyphein Flow Globe: Options panel, Format pane, languages and accessibility.">
+<link rel="stylesheet" href="/assets/glyphein.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#070B12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)">
+</head>
+<body>
+<div class="page">
+<div class="enveloppe">
+
+  <header class="entete">
+    <a class="marque" href="/" aria-label="Glyphein — home">
+      <svg width="34" height="34" viewBox="18 18 64 64" role="img" aria-hidden="true">
+        <mask id="mq" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+          <path d="M37 18H63L82 37V63L63 82H37L18 63V37Z" fill="#fff"/>
+          <path d="M42.5 32H57.5L64 38.5L90 12.5V49.5H50V55.5L56 61.5H64L57.5 68H42.5L32 57.5V42.5Z" fill="#000"/>
+        </mask>
+        <rect width="100" height="100" fill="currentColor" mask="url(#mq)"/>
+      </svg>
+      <span class="mot">GLYPHEIN</span>
+    </a>
+    <nav class="pages">
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/" aria-current="page">Docs</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="docs">
+<nav class="sommaire" aria-label="Manual"><p>Flow Globe manual</p><ol><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/data/">Your data</a></li><li><a href="/docs/views/">The views</a></li><li><a href="/docs/map/">Map and cards</a></li><li><a href="/docs/places/">Place names</a></li><li><a href="/docs/settings/" aria-current="page">Settings</a></li><li><a href="/docs/troubleshooting/">Notices and diagnostics</a></li></ol></nav>
+      <article class="docs__corps">
+        <h1>Settings</h1>
+        <p class="accroche">What can be changed from inside the visual, what belongs in the Format pane, and how the visual adapts to its readers.</p>
+        <div class="prose">
+
+<p>Settings live in two places. <strong>Options</strong>, inside the visual, holds what a reader may
+want to change while exploring. The <strong>Format pane</strong> of Power&nbsp;BI holds what the
+author sets once. What you change in either is saved with the report.</p>
+
+<h2>Options</h2>
+<p>The sliders icon after the view buttons.</p>
+<figure class="cliche">
+  <img src="/assets/img/flow-globe/options.webp" alt="The Options panel open on the left of the map: Routes shown, Minimum value, Cover % of volume, Bundle flows, Reciprocal flows, Lock view, Theme, Display mode, Group by, Language, Layers." width="1400" height="860" loading="lazy" decoding="async">
+  <figcaption>The Options panel.</figcaption>
+</figure>
+<div class="tableau-cadre"><table class="tableau">
+<thead><tr><th scope="col">Option</th><th scope="col">What it does</th></tr></thead>
+<tbody>
+<tr><td>Routes shown</td><td>Keeps the N largest flows.</td></tr>
+<tr><td>Minimum value</td><td>Hides flows below a value.</td></tr>
+<tr><td>Cover % of volume <span class="plan plan--premium">Premium</span></td><td>Keeps the corridors that carry the chosen share of the volume.</td></tr>
+<tr><td>Bundle flows</td><td>How far bundling gathers flows, from 0 to 100&nbsp;%.</td></tr>
+<tr><td>Reciprocal flows</td><td>Split or Net.</td></tr>
+<tr><td>Lock view</td><td>Stops automatic reframing.</td></tr>
+<tr><td>Auto-rotate</td><td>Turns the globe slowly. 3D only.</td></tr>
+<tr><td>Theme</td><td>Dark or Light.</td></tr>
+<tr><td>Display mode</td><td>Auto: layers and detail follow the zoom. Manual: you choose.</td></tr>
+<tr><td>Group by</td><td>Cities/Ports, Countries or Continents. Manual mode only.</td></tr>
+<tr><td>Language</td><td>Auto follows the report; or pick one of ten.</td></tr>
+<tr><td>Layers</td><td>Legend, and in Manual mode: active countries, country names, graticule, borders, regions, labels.</td></tr>
+<tr><td>Animation</td><td>Particles, Arrows or None.</td></tr>
+<tr><td>Diagnostics</td><td>Opens the Data diagnostics panel. See <a href='/docs/troubleshooting/'>Notices and diagnostics</a>.</td></tr>
+</tbody></table></div>
+
+<h2>Format pane</h2>
+<p>Select the visual, then open <strong>Format visual</strong>. The cards, in order:</p>
+<div class="tableau-cadre"><table class="tableau">
+<thead><tr><th scope="col">Card</th><th scope="col">Settings</th></tr></thead>
+<tbody>
+<tr><td>Flows shown</td><td>Reciprocal flows · Show all routes · Routes shown · Minimum value · Cover % of volume</td></tr>
+<tr><td>Flows</td><td>Line colour · Animation · Direction mark at rest · Path · Bundle around · Render limit</td></tr>
+<tr><td>Nodes</td><td>Show · Labels · Size (%) · Dependency analysis · marker shape for cities, countries and continents</td></tr>
+<tr><td>Legend</td><td>Show</td></tr>
+<tr><td>Value format</td><td>Display units · Decimal places · Regional format</td></tr>
+<tr><td>Variance to objective</td><td>Favourable and Unfavourable colours · Higher is favourable</td></tr>
+<tr><td>Category colours</td><td>One colour per category. Present when a Category is used, while its view is open.</td></tr>
+<tr><td>Colours — [measure]</td><td>Low, mid and high colours and thresholds of an extra measure's ramp.</td></tr>
+<tr><td>Extra measures</td><td>Measure type of each extra measure.</td></tr>
+<tr><td>Base map</td><td>Theme · Accessibility patterns · Display mode · Group by · Borders · Regions · Active countries and their colour · Country names</td></tr>
+<tr><td>Camera</td><td>Lock view · Fit on load · Fit on selection</td></tr>
+<tr><td>Hover</td><td>Rendered by: Glyphein (built-in) or Power BI (report page tooltips)</td></tr>
+</tbody></table></div>
+<p>Some settings are greyed while <em>Display mode</em> is Auto, because the zoom decides them; switch
+to Manual to set them by hand.</p>
+
+<h2>Languages</h2>
+<p>The visual speaks English, French, German, Spanish, Italian, Dutch, Portuguese, Japanese, Korean
+and Chinese, and writes country names in the same language. By default it follows the language of the
+report; <em>Language</em> in Options overrides it. Number separators follow <em>Regional format</em> in
+the Format pane.</p>
+
+<h2>Accessibility</h2>
+<ul>
+  <li><strong>Keyboard.</strong> Every control is reached with <kbd>Tab</kbd> and used with
+  <kbd>Enter</kbd> or <kbd>Space</kbd>. <kbd>Esc</kbd> closes the detail card. The flows and places on
+  the map itself are reached through <strong>Search</strong>.</li>
+  <li><strong>Patterns.</strong> <em>Accessibility patterns</em>, in the Format pane card <em>Base
+  map</em>, repeats colour with a second channel: hatching on unfavourable flows, dots where data is
+  missing.</li>
+  <li><strong>High contrast.</strong> In a Windows high-contrast theme, the visual draws with the theme's
+  colours and turns the patterns on by itself.</li>
+  <li><strong>Reduced motion.</strong> When the system asks for reduced motion, the visual stops
+  its animations and the globe no longer turns by itself.</li>
+</ul>
+
+        </div>
+<nav class="suite" aria-label="Chapters"><a href="/docs/places/"><span>Previous</span>Place names</a><a href="/docs/troubleshooting/" style="text-align:right"><span>Next</span>Notices and diagnostics</a></nav>
+      </article>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <span>© 2026 Glyphein · last updated 27 September 2026</span>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/">Docs</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </footer>
+
+</div>
+</div>
+</body>
+</html>

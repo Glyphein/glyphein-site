@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Place names — Flow Globe manual · Glyphein</title>
+<meta name="description" content="Offline geocoding in Glyphein Flow Globe: countries, 32,000 cities, ports, ISO codes, shared names and coordinates.">
+<link rel="stylesheet" href="/assets/glyphein.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#070B12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)">
+</head>
+<body>
+<div class="page">
+<div class="enveloppe">
+
+  <header class="entete">
+    <a class="marque" href="/" aria-label="Glyphein — home">
+      <svg width="34" height="34" viewBox="18 18 64 64" role="img" aria-hidden="true">
+        <mask id="mq" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+          <path d="M37 18H63L82 37V63L63 82H37L18 63V37Z" fill="#fff"/>
+          <path d="M42.5 32H57.5L64 38.5L90 12.5V49.5H50V55.5L56 61.5H64L57.5 68H42.5L32 57.5V42.5Z" fill="#000"/>
+        </mask>
+        <rect width="100" height="100" fill="currentColor" mask="url(#mq)"/>
+      </svg>
+      <span class="mot">GLYPHEIN</span>
+    </a>
+    <nav class="pages">
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/" aria-current="page">Docs</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="docs">
+<nav class="sommaire" aria-label="Manual"><p>Flow Globe manual</p><ol><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/data/">Your data</a></li><li><a href="/docs/views/">The views</a></li><li><a href="/docs/map/">Map and cards</a></li><li><a href="/docs/places/" aria-current="page">Place names</a></li><li><a href="/docs/settings/">Settings</a></li><li><a href="/docs/troubleshooting/">Notices and diagnostics</a></li></ol></nav>
+      <article class="docs__corps">
+        <h1>Place names</h1>
+        <p class="accroche">How Flow Globe turns the names in your data into positions on the map — without any online service.</p>
+        <div class="prose">
+
+<p>Flow Globe carries its own place database. Nothing is looked up online: names are matched inside
+the visual, in the report, in a fraction of a second.</p>
+
+<h2>What it knows</h2>
+<ul>
+  <li><strong>250 countries and territories</strong>, by name or by ISO code (two or three letters).
+  Country names are recognised in English and in their French, German, Spanish, Italian and
+  Portuguese forms, as well as their official long forms.</li>
+  <li><strong>More than 32,000 cities</strong> of over 10,000 inhabitants, from GeoNames, and the world's
+  major <strong>ports</strong>. City names are also recognised in Japanese, Chinese and Korean script.</li>
+  <li>Common alternative spellings and the usual names of capitals.</li>
+</ul>
+<p>Matching ignores case and accents. City-states such as Singapore or Monaco resolve to the city.</p>
+
+<h2>Places that share a name</h2>
+<p>When several real places share a name, the most populous is used, and a notice lists the names
+concerned. To choose another:</p>
+<ul>
+  <li>put your country column in <strong>Origin country</strong> or <strong>Destination
+  country</strong>; or</li>
+  <li>write the context into the name: <code>Toledo, Spain</code>, <code>Paris, TX</code>; or</li>
+  <li>give the coordinates.</li>
+</ul>
+<p>If the country you give contradicts the place found, the visual keeps the place it knows and says
+it lies <em>outside the given country or region</em>. A two-letter state code that matches nothing is
+not flagged: <code>Hamburg, PA</code> resolves to Hamburg, Germany. When in doubt, use the country
+column or coordinates.</p>
+
+<h2>Places it does not find</h2>
+<p>A name it cannot place — a warehouse code, a village, a misspelling — is listed in a notice,
+<em>unrecognised places</em>, and counted in Diagnostics. Its flows are not drawn. Use a country, a
+major city, a port or an ISO code, or give coordinates.</p>
+
+<h2>Coordinates</h2>
+<p>The four latitude and longitude wells place a point exactly, and take priority over the name.
+Use them for sites, depots or anything below city level.</p>
+<ul>
+  <li>Decimal degrees, latitude within ±90 and longitude within ±180.</li>
+  <li><code>(0, 0)</code> is read as a missing value: leave those cells empty instead.</li>
+  <li>If the coordinates lie more than 2,000&nbsp;km from the place the name designates, the visual
+  warns that latitude and longitude may have been swapped.</li>
+  <li>A latitude without its longitude is ignored, and the place is located by name.</li>
+  <li>A point given only by coordinates takes the name of the nearest city, when there is one
+  close by. To show your own label, use the <strong>display name</strong> wells.</li>
+</ul>
+
+<h2>Credits</h2>
+<p>Places: GeoNames (CC BY 4.0). Base map: Natural Earth. The credit line is shown at the bottom of
+the visual.</p>
+
+        </div>
+<nav class="suite" aria-label="Chapters"><a href="/docs/map/"><span>Previous</span>Map and cards</a><a href="/docs/settings/" style="text-align:right"><span>Next</span>Settings</a></nav>
+      </article>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <span>© 2026 Glyphein · last updated 27 September 2026</span>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/">Docs</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </footer>
+
+</div>
+</div>
+</body>
+</html>

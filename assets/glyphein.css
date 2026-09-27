@@ -509,6 +509,233 @@ nav.pages a[aria-current="page"]::after {
 .pied a:hover { color: var(--encre-2); border-bottom-color: currentColor; }
 .pied nav { display: flex; gap: var(--sp-5); }
 
+/* ─── 13 bis · Pages produit et manuel (27/09/2026) ───────────────────────
+   Ajouts pour /flow-globe/ et /docs/. Aucune couleur nouvelle : tout vient des
+   jetons du §01. Même matériau — plaque opaque, limbe sur l'arête haute. */
+
+/* Le globe dans la plaque du hero : la réserve est remplie. L'octogone est celui
+   du monogramme (charte §02), la capture est une vraie sortie du visuel. */
+.plaque-hero--globe {
+  filter: drop-shadow(0 14px 18px var(--taille-tranche));
+}
+.plaque-hero--globe picture,
+.plaque-hero--globe img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.plaque-hero--globe img {
+  object-fit: cover;
+  clip-path: polygon(29.7% 0, 70.3% 0, 100% 29.7%, 100% 70.3%, 70.3% 100%, 29.7% 100%, 0 70.3%, 0 29.7%);
+}
+.plaque-hero--globe svg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Le cliché : une capture du produit, posée sur une plaque, légendée. */
+.cliche {
+  margin: var(--sp-6) 0 0;
+}
+.cliche img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-panel);
+  box-shadow: var(--ombre), inset 0 1px 0 var(--limbe);
+  background: var(--surface);
+}
+.cliche figcaption {
+  margin-top: var(--sp-3);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--encre-2);
+  max-width: var(--mesure);
+}
+
+/* Deux clichés côte à côte au-delà de 900 px. */
+.cliches {
+  display: grid;
+  gap: var(--sp-5);
+  margin-top: var(--sp-6);
+}
+.cliches .cliche { margin: 0; }
+@media (min-width: 900px) {
+  .cliches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* La note : ce qu'il faut savoir, sans alerte. Même forme que l'épreuve, trait
+   plein en accent — la hachure reste réservée à ce qui manque (§05). */
+.note {
+  position: relative;
+  background: var(--surface);
+  border-radius: var(--r-group);
+  padding: var(--sp-4) var(--sp-5);
+  margin: var(--sp-5) 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--encre-2);
+  box-shadow: var(--ombre-basse);
+  overflow: hidden;
+  max-width: var(--mesure);
+}
+.note::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--accent);
+}
+.note strong:first-child {
+  display: block;
+  color: var(--encre-texte);
+  margin-bottom: 4px;
+}
+
+/* Tableaux de référence : réglés, sans grille lourde. */
+.tableau-cadre {
+  overflow-x: auto;
+  margin: var(--sp-5) 0;
+  border-radius: var(--r-group);
+  background: var(--surface);
+  box-shadow: var(--ombre-basse);
+}
+.tableau {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.tableau th, .tableau td {
+  text-align: left;
+  vertical-align: top;
+  padding: 11px 16px;
+  border-top: 1px solid var(--arete);
+}
+.tableau thead th {
+  border-top: 0;
+  font-family: Sora, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--encre-3);
+  background: var(--surface-haute);
+}
+.tableau td { color: var(--encre-2); }
+.tableau td:first-child, .tableau th[scope="row"] { color: var(--encre-texte); font-weight: 500; min-width: 9em; }
+.tableau td:last-child { white-space: normal; }
+
+/* L'étiquette de plan : Gratuit en creux, Premium en accent. Le texte porte le sens,
+   la couleur le redit — jamais la couleur seule. */
+.plan {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 2px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+  color: var(--encre-2);
+  box-shadow: inset 0 0 0 1px var(--arete);
+}
+.plan--premium { color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+
+kbd {
+  font: 500 .82em/1 ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: var(--surface-haute);
+  box-shadow: inset 0 -1px 0 var(--creux-haut), inset 0 1px 0 var(--creux-bas);
+  color: var(--encre-texte);
+}
+
+/* Listes dans le texte courant. */
+.prose ul, .prose ol { margin: 0 0 var(--sp-4); padding-left: 1.3em; }
+.prose li { margin: 0 0 var(--sp-2); }
+.prose li::marker { color: var(--encre-3); }
+.prose h2 { margin-top: var(--sp-8); padding-top: var(--sp-6); border-top: 1px solid var(--arete); }
+.prose h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.prose h3 { margin-top: var(--sp-6); }
+.prose > p, .prose > ul, .prose > ol { max-width: var(--mesure); }
+.prose dl { margin: 0 0 var(--sp-4); max-width: var(--mesure); }
+.prose dt { font-weight: 600; color: var(--encre-texte); margin-top: var(--sp-3); }
+.prose dd { margin: 2px 0 0; color: var(--encre-2); }
+
+/* ─── 13 ter · Le manuel : sommaire à gauche, texte à droite ──────────────── */
+.docs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+  padding-top: var(--sp-6);
+}
+@media (min-width: 960px) {
+  .docs { grid-template-columns: 220px minmax(0, 1fr); gap: var(--sp-8); }
+  .sommaire { position: sticky; top: var(--sp-5); align-self: start; }
+}
+.sommaire {
+  font-size: 15px;
+}
+.sommaire p {
+  font-family: Sora, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--encre-3);
+  margin: 0 0 var(--sp-3);
+}
+.sommaire ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid var(--arete);
+}
+.sommaire li a {
+  display: block;
+  padding: 6px 0 6px 16px;
+  margin-left: -1px;
+  color: var(--encre-2);
+  border-bottom: 0;
+  border-left: 2px solid transparent;
+}
+.sommaire li a:hover { color: var(--encre-texte); }
+.sommaire li a[aria-current="page"] {
+  color: var(--encre-texte);
+  border-left-color: var(--accent);
+}
+.docs__corps { min-width: 0; }
+.docs__corps h1 { font-size: clamp(32px, 4.4vw, 48px); }
+.docs__corps .accroche { margin-bottom: var(--sp-7); }
+
+/* Page suivante / précédente, en pied de chapitre. */
+.suite {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+  margin-top: var(--sp-8);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--arete);
+  font-size: 15px;
+}
+.suite a { border-bottom: 0; }
+.suite span { display: block; font-size: 13px; color: var(--encre-3); }
+
+/* Les chapitres du manuel, en plaques, sur l'index. */
+.chapitres { list-style: none; margin: var(--sp-6) 0 0; padding: 0; display: grid; gap: var(--sp-4); }
+@media (min-width: 720px) { .chapitres { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-5); } }
+.chapitres a {
+  display: block;
+  height: 100%;
+  border: 0;
+  color: inherit;
+}
+.chapitres .fait { height: 100%; transition: box-shadow var(--micro) var(--ease); }
+.chapitres a:hover .fait { box-shadow: var(--ombre); }
+.chapitres a:hover h3 { color: var(--accent); }
+
 /* ─── 14 · Mouvement ───────────────────────────────────────────────────────
    Le mouvement glisse, il ne saute pas. Et il s'efface entièrement pour qui
    le demande — tokens.motion.reducedMotion. */
@@ -526,5 +753,7 @@ nav.pages a[aria-current="page"]::after {
   .plaque, .fait, .epreuve, .capsule { box-shadow: none; border: 1px solid #ccc; }
   a { color: #000; border-bottom: 0; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
-  .plaque-hero, nav.pages { display: none; }
+  .plaque-hero, nav.pages, .sommaire, .suite { display: none; }
+  .cliche img { box-shadow: none; border: 1px solid #ccc; }
+  .docs { display: block; }
 }

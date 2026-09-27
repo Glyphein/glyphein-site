@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Glyphein — analytical instruments for Power BI</title>
 <meta name="description" content="Glyphein builds analytical instruments for Power BI. Flow Globe draws origin-destination flows on a 3D globe from place names, with no network calls.">
-<link rel="stylesheet" href="assets/glyphein.css">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/glyphein.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#070B12" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)">
 <meta property="og:title" content="Glyphein — analytical instruments for Power BI">
@@ -20,7 +20,6 @@
 
   <header class="entete">
     <a class="marque" href="/" aria-label="Glyphein — home">
-      <!-- Le G taillé au burin. Masse pleine, jamais en contour, jamais incliné (charte §02). -->
       <svg width="34" height="34" viewBox="18 18 64 64" role="img" aria-hidden="true">
         <mask id="mq" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
           <path d="M37 18H63L82 37V63L63 82H37L18 63V37Z" fill="#fff"/>
@@ -31,6 +30,8 @@
       <span class="mot">GLYPHEIN</span>
     </a>
     <nav class="pages">
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/">Docs</a>
       <a href="/support/">Support</a>
       <a href="/privacy/">Privacy</a>
     </nav>
@@ -38,107 +39,33 @@
 
   <main>
 
-    <!-- ═══ Le hero ═══════════════════════════════════════════════════════
-         Deux colonnes : la parole à gauche, la plaque à droite.
-         ⚠ LA PLAQUE EST LA RÉSERVE DU GLOBE. Quand le rendu 3D sera figé, il
-         vient s'y loger tel quel — mêmes dimensions, même octogone, même
-         limbe sur l'arête haute. D'ici là elle porte de la matière : un
-         instrument taillé, pas encore chargé de données. Ne pas la remplir
-         d'autre chose. -->
     <section class="hero">
 
       <div>
         <h1>We engrave what your data says.</h1>
         <p class="accroche">Glyphein builds analytical instruments for Power&nbsp;BI. Our first one
-        draws the flows inside a network — where they run, how far they sit from plan, and what
-        depends on what.</p>
-        <p><span class="capsule">Flow Globe — in development, coming to Microsoft AppSource</span></p>
+        draws the flows inside a network — where they run, how far they sit from plan, what changed,
+        and what depends on what.</p>
+        <p><span class="capsule">Flow Globe — coming to Microsoft AppSource</span></p>
+        <p style="margin-top:24px"><a href="/flow-globe/">What Flow Globe does</a> &nbsp;·&nbsp; <a href="/docs/">Read the manual</a></p>
       </div>
 
-      <div class="plaque-hero" aria-hidden="true">
-        <svg viewBox="0 0 400 400" role="presentation" focusable="false">
+      <div class="plaque-hero plaque-hero--globe">
+        <picture>
+          <source srcset="/assets/img/flow-globe/hero-light.webp" media="(prefers-color-scheme: light)">
+          <img src="/assets/img/flow-globe/hero-dark.webp" width="900" height="900"
+               alt="Flow Globe on a 3D globe: shipping flows from Asia, Africa and North America converge on Rotterdam, each arc as thick as its value.">
+        </picture>
+        <!-- Le limbe, sur les trois arêtes hautes de l'octogone (charte §03). -->
+        <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
           <defs>
-            <!-- La taille : trois passes de burin à 45°, de plus en plus serrées.
-                 La densité du trait code l'intensité depuis quatre siècles (charte §05) ;
-                 ici elle ne code rien, elle donne son grain au cuivre. -->
-            <pattern id="t1" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="0" y1="0" x2="0" y2="16" stroke="var(--accent)" stroke-width="1" opacity=".42"/>
-            </pattern>
-            <pattern id="t2" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="8" y1="0" x2="8" y2="16" stroke="var(--accent)" stroke-width="1" opacity=".42"/>
-            </pattern>
-            <pattern id="t3" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="4" y1="0" x2="4" y2="8" stroke="var(--accent)" stroke-width="1" opacity=".42"/>
-            </pattern>
-
-            <!-- La face prend la lumière du haut à gauche : c'est une masse,
-                 pas un contour. -->
-            <linearGradient id="face" x1="0" y1="0" x2=".9" y2="1">
-              <stop offset="0"  stop-color="var(--taille-haut)"/>
-              <stop offset="1"  stop-color="var(--taille-face)"/>
-            </linearGradient>
-            <!-- ⚠ Mesuré au rendu : sans `color-interpolation-filters="sRGB"`, Chromium
-                 calcule l'ombre en linearRGB et la teinte en vert sur fond Nuit. -->
-            <filter id="assise" x="-25%" y="-25%" width="150%" height="160%"
-                    color-interpolation-filters="sRGB">
-              <feDropShadow dx="0" dy="14" stdDeviation="18"
-                            flood-color="var(--taille-tranche)" flood-opacity=".85"/>
-            </filter>
-
-            <!-- La lumière vient du haut à gauche : la taille s'épaissit en s'en éloignant. -->
-            <linearGradient id="vers-ombre" x1="0" y1="0" x2="1" y2="1">
-              <stop offset=".10" stop-color="#000"/>
-              <stop offset=".95" stop-color="#fff"/>
-            </linearGradient>
-            <linearGradient id="vers-ombre-fort" x1="0" y1="0" x2="1" y2="1">
-              <stop offset=".52" stop-color="#000"/>
-              <stop offset="1"   stop-color="#fff"/>
-            </linearGradient>
-            <mask id="m2"><rect width="400" height="400" fill="url(#vers-ombre)"/></mask>
-            <mask id="m3"><rect width="400" height="400" fill="url(#vers-ombre-fort)"/></mask>
-
-            <!-- L'octogone du monogramme, à l'échelle de la plaque. -->
-            <clipPath id="oct">
-              <path d="M135 40 H265 L360 135 V265 L265 360 H135 L40 265 V135 Z"/>
-            </clipPath>
-
-            <!-- Le limbe : arête lumineuse sur le bord haut, éteinte aux extrémités. -->
-            <linearGradient id="limbe" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0"   stop-color="var(--accent)" stop-opacity="0"/>
-              <stop offset=".5"  stop-color="var(--accent)" stop-opacity=".85"/>
-              <stop offset="1"   stop-color="var(--accent)" stop-opacity="0"/>
+            <linearGradient id="limbe-g" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0"  stop-color="var(--accent)" stop-opacity="0"/>
+              <stop offset=".5" stop-color="var(--accent)" stop-opacity=".85"/>
+              <stop offset="1"  stop-color="var(--accent)" stop-opacity="0"/>
             </linearGradient>
           </defs>
-
-          <!-- L'assise : la masse pose sur quelque chose, elle ne flotte pas. -->
-          <path d="M135 40 H265 L360 135 V265 L265 360 H135 L40 265 V135 Z"
-                fill="var(--taille-face)" filter="url(#assise)"/>
-
-          <!-- La face, éclairée du haut à gauche, et sa taille. -->
-          <g clip-path="url(#oct)">
-            <path d="M135 40 H265 L360 135 V265 L265 360 H135 L40 265 V135 Z" fill="url(#face)"/>
-            <rect width="400" height="400" fill="url(#t1)"/>
-            <rect width="400" height="400" fill="url(#t2)" mask="url(#m2)"/>
-            <rect width="400" height="400" fill="url(#t3)" mask="url(#m3)"/>
-          </g>
-
-          <!-- Le sillon : double filet incisé en retrait du bord, comme sur une
-               planche de taille-douce. Ombre au-dessus, lumière en dessous. -->
-          <path d="M147 62 H253 L338 147 V253 L253 338 H147 L62 253 V147 Z"
-                fill="none" stroke="var(--fond)" stroke-width="1" opacity=".55"
-                transform="translate(0 -1)"/>
-          <path d="M147 62 H253 L338 147 V253 L253 338 H147 L62 253 V147 Z"
-                fill="none" stroke="var(--accent)" stroke-width="1" opacity=".22"/>
-
-          <!-- Le limbe, sur les trois arêtes hautes. Signature n°1 : un solide à
-               facettes prend la lumière SUR SES ARÊTES (charte §03). -->
-          <path d="M40 135 L135 40 H265 L360 135"
-                fill="none" stroke="url(#limbe)" stroke-width="2" stroke-linejoin="round"/>
-
-          <!-- Le poinçon, au centre : l'anneau-cœur. Le seul cercle de la
-               composition — l'instrument est taillé, la donnée coule (§06). -->
-          <circle cx="200" cy="200" r="5.5" fill="none"
-                  stroke="var(--accent)" stroke-width="2" opacity=".55"/>
+          <path d="M0 119 L119 0 H281 L400 119" fill="none" stroke="url(#limbe-g)" stroke-width="2" stroke-linejoin="round"/>
         </svg>
       </div>
 
@@ -158,9 +85,8 @@
           <ul class="faits faits--grille">
             <li class="fait">
               <h3>Place names, not coordinates</h3>
-              <p>32,000 cities, ports and countries are geocoded inside the visual. You drop the
-              names your data already contains; there is no latitude column to build and no
-              aggregation trap to work around.</p>
+              <p>More than 32,000 cities, ports and countries are geocoded inside the visual. You drop
+              the names your data already contains; there is no latitude column to build.</p>
             </li>
             <li class="fait">
               <h3>No network calls</h3>
@@ -169,18 +95,18 @@
               tenants that block external services, and it keeps working offline.</p>
             </li>
             <li class="fait">
-              <h3>Automatic aggregation</h3>
+              <h3>From continents to cities</h3>
               <p>Zoomed out, the map shows continent to continent. Zoom in and it resolves to
-              countries, then to cities — so two thousand routes read as a network rather than a
-              tangle.</p>
+              countries, then to cities and ports — so two thousand routes read as a network rather
+              than a tangle.</p>
             </li>
             <li class="fait">
-              <h3>Variance to objective</h3>
-              <p>Add a target column and the map stops showing volume and starts showing drift:
-              which corridors run under plan, by how much, and in which direction. Never colour
-              alone — every state carries a second channel.</p>
+              <h3>Against plan, against last year</h3>
+              <p>Add a target and the map shows which corridors run under plan. Add last year's
+              value and it shows what appeared, what went, what grew, what fell.</p>
             </li>
           </ul>
+          <p style="margin-top:32px"><a href="/flow-globe/">Everything Flow Globe does</a></p>
         </div>
       </section>
 
@@ -216,8 +142,11 @@
   </main>
 
   <footer class="pied">
-    <span>© 2026 Glyphein</span>
+    <span>© 2026 Glyphein · last updated 27 September 2026</span>
     <nav>
+      <a href="/">Home</a>
+      <a href="/flow-globe/">Flow Globe</a>
+      <a href="/docs/">Docs</a>
       <a href="/support/">Support</a>
       <a href="/privacy/">Privacy</a>
     </nav>
