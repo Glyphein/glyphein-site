@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy — Glyphein</title>
-<meta name="description" content="Glyphein Flow Globe makes no network requests and collects no data. This page states exactly what that means, and what little we hold when you write to us.">
+<meta name="description" content="Glyphein Flow Globe makes no network requests and collects no data. This page states exactly what that means, and what little we hold when you buy a licence or write to us.">
 <link rel="stylesheet" href="../assets/glyphein.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#070B12" media="(prefers-color-scheme: dark)">
@@ -40,24 +40,32 @@
       <p class="accroche">The short version: the visual sends nothing anywhere, and this site sets
       no cookies. The rest of this page says exactly what that means, so that you can verify it
       rather than take our word for it.</p>
-
-      <!-- ⚠ À RETIRER avant la soumission AppSource. Voir claude/site-glyphein-eu.md. -->
-      <div class="epreuve colonne">
-        <strong>À compléter avant publication</strong>
-        Identité du responsable de traitement : raison sociale, forme juridique, numéro SIREN et
-        adresse du siège. La page ne peut pas rester en ligne sans, et Partner Center la demandera
-        à la soumission.
-      </div>
     </section>
 
     <div class="corps">
 
       <section class="section">
         <p class="section__num"></p>
+        <div class="section__corps colonne">
+          <h2>Who we are</h2>
+          <p>Glyphein Flow Globe is published by Glyphein (“Glyphein”, “we”), in France.</p>
+          <!-- ⚠ À RETIRER quand l'identité de l'éditeur est saisie (fiche AppSource, § 4 ; mêmes données dans /terms/). -->
+          <div class="epreuve">
+            <strong>To be completed</strong>
+            Publisher and data controller: legal name, legal form, SIREN number and registered
+            address. Website host: name and address. Retention of prospect and customer information:
+            the three and five years in section 07 are proposals, to be confirmed.
+          </div>
+          <p>Contact: <a href="mailto:support@glyphein.eu">support@glyphein.eu</a>.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section__num"></p>
         <div class="section__corps">
           <h2>The visual collects nothing</h2>
-          <p class="colonne">Glyphein Flow Globe runs entirely inside the Power&nbsp;BI report that
-          hosts it. It has no server, no account, and no way to reach us.</p>
+          <p class="colonne">Glyphein Flow Globe runs entirely inside Microsoft Power&nbsp;BI. It has
+          no server, no account, and no way to reach us.</p>
 
           <ul class="faits faits--grille">
             <li class="fait">
@@ -68,36 +76,84 @@
               all.</p>
             </li>
             <li class="fait">
-              <h3>Geocoding happens inside the package</h3>
-              <p>The place names you supply are matched against a table of cities, ports and
-              countries embedded in the visual itself. Your place names never leave the report.</p>
+              <h3>Your data stays in your session</h3>
+              <p>The data you bind to the visual is processed in memory, inside your Power&nbsp;BI
+              session. It is never sent to Glyphein or to anyone else.</p>
             </li>
             <li class="fait">
-              <h3>Fonts are embedded</h3>
-              <p>The typefaces are shipped inside the package as binary data, not fetched from a
-              font CDN — so no third party learns that a report is being opened, or by whom.</p>
+              <h3>Geocoding happens inside the package</h3>
+              <p>The place names you supply are matched against a table of cities, ports and
+              countries embedded in the visual itself. No geocoding service is called; your place
+              names never leave the report.</p>
+            </li>
+            <li class="fait">
+              <h3>Map and fonts are embedded</h3>
+              <p>The base map and the typefaces are shipped inside the package. No map tile and no
+              font is downloaded — so no third party learns that a report is being opened, or by
+              whom.</p>
             </li>
             <li class="fait">
               <h3>No telemetry, no crash reporting</h3>
-              <p>We have no measurement of how many people use the visual, which features they use,
-              or when it fails. This is a cost we accept deliberately; the consequence is described
-              on the <a href="/support/">support page</a>.</p>
+              <p>No usage measurement either. We do not know how many people use the visual, which
+              features they use, or when it fails. This is a cost we accept deliberately; the
+              consequence is described on the <a href="/support/">support page</a>.</p>
+            </li>
+            <li class="fait">
+              <h3>No cookie, no browser storage</h3>
+              <p>The settings you choose — theme, view, filters — are saved by Power&nbsp;BI inside
+              your report, under your control. Glyphein has no access to them.</p>
             </li>
           </ul>
 
           <p class="colonne" style="margin-top:var(--sp-5)">Your data stays where Power&nbsp;BI puts
           it. Glyphein is not a processor of it, because Glyphein never receives it.</p>
+          <p class="colonne">You do not have to believe us. Open the browser developer tools on a
+          report page containing the visual, look at the network tab, and interact with the globe: no
+          request originates from it. Microsoft applies the same check — refusing all external
+          service access is one of the criteria a visual must meet to be certified.</p>
         </div>
       </section>
 
       <section class="section">
         <p class="section__num"></p>
         <div class="section__corps colonne">
-          <h2>You can verify this</h2>
-          <p>You do not have to believe us. Open the browser developer tools on a report page
-          containing the visual, look at the network tab, and interact with the globe: no request
-          originates from it. Microsoft applies the same check — refusing all external service
-          access is one of the criteria a visual must meet to be certified.</p>
+          <h2>Licences for paid features</h2>
+          <p>Licences for paid features are sold through Microsoft AppSource. Microsoft sells and
+          manages them, and they are assigned in the Microsoft&nbsp;365 admin center.</p>
+          <p>To decide which features to show, the visual asks Power&nbsp;BI which Glyphein plans the
+          current user holds. Power&nbsp;BI answers inside your session, and the answer is not sent
+          to Glyphein.</p>
+          <p>Microsoft is the merchant of record: purchases, billing, payment and licence assignment
+          are handled by Microsoft under the Microsoft Privacy Statement, and Glyphein never sees
+          your payment instrument.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section__num"></p>
+        <div class="section__corps colonne">
+          <h2>What Glyphein may receive from Microsoft</h2>
+          <p>When you acquire the visual, start a purchase or contact us through Microsoft AppSource,
+          Microsoft may share with Glyphein, as the publisher, the information it provides to
+          publishers: for example your name, company, email address, country, and the plan and
+          quantity purchased.</p>
+          <p>We use it to manage your subscription, to meet our accounting and tax obligations, and,
+          if you have not bought anything, to answer the interest you expressed.</p>
+          <p>Legal bases: performance of the contract for customers, our legitimate interest for
+          prospects, and our legal obligations for accounting.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section__num"></p>
+        <div class="section__corps colonne">
+          <h2>When you write to us</h2>
+          <p>If you send an email to <a href="mailto:support@glyphein.eu">support@glyphein.eu</a>,
+          we hold what you chose to send: your address, your message, and any attachment. We use it
+          to answer you and to fix what you reported, and for nothing else. We do not add it to a
+          mailing list.</p>
+          <p>Please do not send us report data you are not allowed to share. If reproducing a problem
+          requires a dataset, we will ask you for an anonymised extract instead.</p>
         </div>
       </section>
 
@@ -108,7 +164,7 @@
           <ul class="faits faits--liste colonne">
             <li class="fait">
               <h3>No cookies</h3>
-              <p>This site sets none, for any purpose, including analytics.</p>
+              <p>This site sets none, for any purpose, and has no audience measurement.</p>
             </li>
             <li class="fait">
               <h3>No third-party requests</h3>
@@ -129,27 +185,36 @@
       <section class="section">
         <p class="section__num"></p>
         <div class="section__corps colonne">
-          <h2>When you write to us</h2>
-          <p>If you send an email to <a href="mailto:support@glyphein.eu">support@glyphein.eu</a>,
-          we hold what you chose to send: your address, your message, and any attachment. We use it
-          to answer you and to fix what you reported, and for nothing else. We do not sell it, share
-          it, or add it to a mailing list.</p>
-          <p>Mail is hosted by Infomaniak Network SA, in Switzerland. Correspondence is kept for as
-          long as it is useful for support history, and at most three years after the last exchange,
-          after which it is deleted.</p>
-          <p>Please do not attach your business data. If reproducing a problem requires a dataset,
-          we will ask you for an anonymised extract instead.</p>
+          <h2>How long we keep it</h2>
+          <ul class="faits faits--liste">
+            <li class="fait">
+              <h3>Prospect information received from Microsoft</h3>
+              <p>Three years after our last contact.</p>
+            </li>
+            <li class="fait">
+              <h3>Customer information</h3>
+              <p>For the duration of the subscription, then five years, the limitation period.</p>
+            </li>
+            <li class="fait">
+              <h3>Accounting records</h3>
+              <p>Ten years, as required by French law.</p>
+            </li>
+            <li class="fait">
+              <h3>Support emails</h3>
+              <p>Three years after the last exchange, after which they are deleted.</p>
+            </li>
+          </ul>
         </div>
       </section>
 
       <section class="section">
         <p class="section__num"></p>
         <div class="section__corps colonne">
-          <h2>Purchases</h2>
-          <p>Licences for paid features are sold through Microsoft AppSource. Microsoft is the
-          merchant of record: it handles the transaction, the billing details and the payment
-          instrument, and Glyphein never sees them. Microsoft's own privacy statement governs that
-          part of the relationship.</p>
+          <h2>Who receives it</h2>
+          <p>Your information is used by Glyphein only. It is not sold, rented or shared for
+          marketing.</p>
+          <p>Mail is hosted by Infomaniak Network SA, in Switzerland. Microsoft is a separate
+          controller for the data it processes for AppSource and Power&nbsp;BI.</p>
         </div>
       </section>
 
@@ -157,9 +222,8 @@
         <p class="section__num"></p>
         <div class="section__corps colonne">
           <h2>Your rights</h2>
-          <p>Under the General Data Protection Regulation you may ask for access to the personal
-          data we hold about you, its correction or its deletion, and you may object to its
-          processing. In practice this concerns your correspondence with us and nothing else. Write
+          <p>Under the General Data Protection Regulation you have the right to access, rectify and
+          erase your data, to object to or restrict its processing, and to data portability. Write
           to <a href="mailto:support@glyphein.eu">support@glyphein.eu</a> and we will answer within
           one month.</p>
           <p>If you consider that your rights are not being respected, you may lodge a complaint
@@ -172,8 +236,9 @@
         <p class="section__num"></p>
         <div class="section__corps colonne">
           <h2>Changes</h2>
-          <p>If this policy changes, the date below changes with it and the previous version stays
-          available on request. We will not quietly start collecting something.</p>
+          <p>We will publish any change on this page, with its date: the date below changes with it,
+          and the previous version stays available on request. We will not quietly start collecting
+          something.</p>
           <p class="fin" style="margin-top:var(--sp-5)">This page describes what the software and
           this site actually do, verified against the source code. It is not legal advice; if your
           organisation requires a specific form of statement, ask and we will provide what we
@@ -185,13 +250,15 @@
   </main>
 
   <footer class="pied">
-    <span>© 2026 Glyphein · version 1, 5 September 2026</span>
+    <span>© 2026 Glyphein · version 2, 3 October 2026</span>
     <nav>
       <a href="/">Home</a>
       <a href="/flow-globe/">Flow Globe</a>
       <a href="/docs/">Docs</a>
       <a href="/support/">Support</a>
       <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/donnees/LICENCE.txt">Open data</a>
     </nav>
   </footer>
 

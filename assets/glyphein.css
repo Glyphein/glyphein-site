@@ -507,7 +507,7 @@ nav.pages a[aria-current="page"]::after {
 }
 .pied a { color: var(--encre-3); border-bottom-color: transparent; }
 .pied a:hover { color: var(--encre-2); border-bottom-color: currentColor; }
-.pied nav { display: flex; gap: var(--sp-5); }
+.pied nav { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5); }   /* sept liens : ils passent à la ligne sur un téléphone */
 
 /* ─── 13 bis · Pages produit et manuel (27/09/2026) ───────────────────────
    Ajouts pour /flow-globe/ et /docs/. Aucune couleur nouvelle : tout vient des
