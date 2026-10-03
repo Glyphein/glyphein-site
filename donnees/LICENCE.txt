@@ -1,0 +1,46 @@
+Glyphein Flow Globe country table — pays-glyphein.csv
+=====================================================
+
+This file is the country table embedded in the Power BI visual "Glyphein Flow Globe": ISO codes, names
+recognised by the geocoder, reference position, parent state of dependent territories, and country names
+in eight languages.
+
+It is derived from "world-countries" (Mohammed Le Doze, https://github.com/mledoze/countries), published
+under the Open Database License (ODbL) 1.0.
+
+As required by the ODbL, this derived database is made available under the same licence:
+Open Database License (ODbL) v1.0 — https://opendatacommons.org/licenses/odbl/1-0/
+Individual contents are under the Database Contents License (DbCL) v1.0 —
+https://opendatacommons.org/licenses/dbcl/1-0/
+
+Changes made to the source: names normalised (lower case, no accents) and grouped with the English,
+French, German, Spanish, Italian and Portuguese translations; position rounded to a thousandth of a
+degree; parent state added for non-independent territories, chosen by Glyphein.
+
+This licence covers this data table only. The visual's code is not affected.
+
+Publisher: Glyphein — support@glyphein.eu
+
+Table des pays de Glyphein Flow Globe — pays-glyphein.csv
+==========================================================
+
+Ce fichier est la table des pays embarquée dans le visuel Power BI « Glyphein Flow Globe » : codes ISO,
+noms reconnus par le géocodeur, position de référence, État de rattachement des territoires, et noms des
+pays dans huit langues.
+
+Elle est dérivée de « world-countries » (Mohammed Le Doze, https://github.com/mledoze/countries),
+publiée sous Open Database License (ODbL) 1.0.
+
+Conformément à l'ODbL, cette base dérivée est mise à disposition sous la même licence :
+Open Database License (ODbL) v1.0 — https://opendatacommons.org/licenses/odbl/1-0/
+Les contenus individuels de la base relèvent de la Database Contents License (DbCL) v1.0 —
+https://opendatacommons.org/licenses/dbcl/1-0/
+
+Modifications apportées à la source : noms normalisés (minuscules, sans accents) et regroupés avec les
+traductions anglaises, françaises, allemandes, espagnoles, italiennes et portugaises ; position arrondie au
+millième de degré ; ajout de l'État de rattachement des territoires non indépendants, choisi par Glyphein.
+
+Cette licence porte sur cette table de données seulement. Le code du visuel n'est pas concerné.
+
+Éditeur : Glyphein — [À COMPLÉTER PAR LOÏC : nom, SIREN, adresse] — support@glyphein.eu
+Fichier régénéré par : node scripts/export-pays-odbl.mjs
