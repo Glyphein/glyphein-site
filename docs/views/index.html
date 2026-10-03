@@ -42,8 +42,9 @@
         <p class="accroche">What colour and thickness mean in each view, and what each state of a flow tells you.</p>
         <div class="prose">
 
-<p>A view decides what the map shows. Switch views with the buttons at the bottom left; the legend
-follows. Thickness always reads as an amount. For readers who do not see colour, the
+<p>A view decides what the map shows. Switch views from the view menu at the bottom left: its button
+names the view on the map and opens the list of all views. The legend follows. Thickness is the
+Value in every view, except What changed, where it is the larger of the two periods. For readers who do not see colour, the
 <em>Accessibility patterns</em> setting marks unfavourable and falling flows with hatching, and missing
 or unknown ones with dots.</p>
 
@@ -58,13 +59,14 @@ several categories takes the colour of the one that weighs most, and its card gi
 </figure>
 
 <h2>Variance to objective <span class="plan plan--premium">Premium</span></h2>
-<p>Unlocks once a measure is placed in <strong>Objective</strong>; until then its button is greyed.</p>
+<p>Unlocks once a measure is placed in <strong>Objective</strong>; until then it stays in the view
+menu, greyed, with the reason.</p>
 <ul>
   <li><strong>Colour</strong> says which side of the objective a flow is on — favourable or
   unfavourable — and how strongly, up to ±100&nbsp;%. Within 0.5&nbsp;% of the objective, a flow is
   on plan and drawn neutral.</li>
-  <li><strong>Thickness</strong> is the size of the gap, not the value: the widest arcs are the
-  largest deviations.</li>
+  <li><strong>Thickness</strong> is the value, as in the Value view: colour alone carries the gap. In
+  a high-contrast theme, where colour is gone, thickness carries the size of the gap instead.</li>
   <li><strong>No objective</strong> is never mistaken for “on plan”: those flows are grey — and dotted
   when Accessibility patterns is on.</li>
   <li>By default, higher is better. For a cost or a lead time, turn off <strong>Higher is
@@ -73,20 +75,21 @@ several categories takes the colour of the one that weighs most, and its card gi
 </ul>
 <figure class="cliche">
   <img src="/assets/img/flow-globe/view-variance.webp" alt="Flat map in the Variance to objective view." width="1400" height="860" loading="lazy" decoding="async">
-  <figcaption>Red below plan, green above. The widest arcs are the largest gaps.</figcaption>
+  <figcaption>Red below plan, green above. Thickness is the value; colour carries the gap.</figcaption>
 </figure>
 
 <h2>What changed <span class="plan plan--premium">Premium</span></h2>
-<p>Unlocks once a measure is placed in <strong>Previous value</strong>. Each flow is compared with
+<p>Unlocks once a measure is placed in <strong>Previous value</strong>; until then it stays in the
+view menu, greyed. Each flow is compared with
 its previous value and given one of these states:</p>
 <div class="tableau-cadre"><table class="tableau">
 <thead><tr><th scope="col">State</th><th scope="col">When</th></tr></thead>
 <tbody>
 <tr><td>Appeared</td><td>No previous value — or a previous value of zero — and a value today.</td></tr>
 <tr><td>Gone</td><td>A previous value, and nothing today. The flow is still drawn, at the volume it used to carry, and its ribbon is cut towards the end.</td></tr>
-<tr><td>Up</td><td>More than 5&nbsp;% above the previous value.</td></tr>
-<tr><td>Down</td><td>More than 5&nbsp;% below.</td></tr>
-<tr><td>Stable</td><td>Within 5&nbsp;% either way.</td></tr>
+<tr><td>Up</td><td>5&nbsp;% or more above the previous value.</td></tr>
+<tr><td>Down</td><td>5&nbsp;% or more below.</td></tr>
+<tr><td>Stable</td><td>Less than 5&nbsp;% either way.</td></tr>
 <tr><td>Unknown</td><td>The two cannot be compared — for instance two opposite flows netted into one, when only one direction has a previous value.</td></tr>
 </tbody></table></div>
 <p>Thickness is the larger of the two volumes, today's or the previous one — so a flow that
@@ -99,27 +102,29 @@ the flow is compared on what those rows add up to: a new carrier on an existing 
 </figure>
 
 <h2>Views on your own fields <span class="plan plan--premium">Premium</span></h2>
-<p>Each field placed in <strong>Extra measures</strong> or <strong>Extra categories</strong> adds a
-button named after it.</p>
+<p>Each field placed in <strong>Extra measures</strong> or <strong>Extra categories</strong> — up to
+two of each — adds a view to the menu, named after it. Thickness stays the Value.</p>
 <dl>
   <dt>Extra measure</dt>
-  <dd>How the measure is drawn depends on its <strong>Measure type</strong>, set in the Format pane,
-  card <em>Extra measures</em>. A <em>Quantity</em> is added up across rows and sets the thickness,
-  while colour stays that of the Value view. A <em>Rate or average</em> is averaged, weighted by Value,
-  and colours the flows on a ramp; <em>Levels</em> takes the most frequent level, one colour per level;
-  <em>Boolean</em> colours by the share of rows that are true. <em>Auto</em> guesses from the data.
-  While the view is open, the card <em>Colours — [your measure]</em> sets the ramp's colours and
-  thresholds.</dd>
+  <dd>The measure sets the colour; how it is read depends on its <strong>Measure type</strong>, set in
+  the Format pane, card <em>Extra measures</em>. A <em>Quantity</em> is added up across rows and a
+  <em>Rate or average</em> is averaged, weighted by Value; both colour the flows on a ramp.
+  <em>Levels</em> takes the level that carries the most Value — <em>mixed</em> on a tie — with one
+  colour per level; <em>Boolean</em> colours by the share of rows that are true. <em>Auto</em> guesses
+  from the data. While the view of a Quantity or a Rate or average is open, the card <em>Colours —
+  [your measure]</em> sets the ramp's colours and thresholds. In a high-contrast theme, those two types
+  set the thickness instead.</dd>
   <dt>Extra category</dt>
   <dd>One colour per value, with no “Others” bucket. The palette has 42 distinct shades before hues
-  repeat, and the 200 largest categories can be recoloured in the Format pane. When a flow mixes
+  repeat; the Format pane card <em>Colours — [your category]</em> lists the 200 largest. When a flow mixes
   several values, its card says so and lists them on click.</dd>
 </dl>
 
 <h2>Views and licences</h2>
 <p>Views marked <span class="plan plan--premium">Premium</span> are part of the paid plan. When a reader's licence does not cover them, the
-report opens in the Value view: every flow is still there, only the Premium views and indices are
-withheld, and the visual says why. While editing, the author is told what those readers will see. See
+report opens in the Value view: the Premium views stay in the menu, greyed — <em>Not included in your
+plan</em> — and the visual says why. While editing, the visual tells the author that readers without a
+licence will see the free equivalents. See
 <a href="/flow-globe/">Free and Premium</a>.</p>
 
         </div>

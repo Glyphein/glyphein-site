@@ -84,13 +84,16 @@
               <p>Particles or arrows travel along each flow. When two places trade in both
               directions, show both arcs or net them into one.</p></li>
             <li class="fait"><h3>How much?</h3>
-              <p>Thickness carries the value — not brightness, not glow. The legend gives the range; each flow's card gives the figure and its share of the network shown.</p></li>
+              <p>Thickness carries the value, never glow — in the What changed view, the larger of the
+              two periods. The legend gives the range; each flow's card gives the figure and its share
+              of the network shown.</p></li>
             <li class="fait"><h3>Against plan?</h3>
               <p>With an objective, colour turns to variance: above or below plan, how far, and
               which corridors have no objective at all.</p></li>
             <li class="fait"><h3>What changed?</h3>
               <p>With last period's value, every corridor is classed as appeared, gone, up, down or
-              stable. A corridor that vanished is still drawn, at the volume it used to carry.</p></li>
+              stable — or unknown when the two cannot be compared. A corridor that vanished is still
+              drawn, at the volume it used to carry.</p></li>
           </ul>
         </div>
       </section>
@@ -99,14 +102,15 @@
         <p class="section__num"></p>
         <div class="section__corps">
           <h2>The views</h2>
-          <p class="colonne">One click switches what the map shows. The <strong>Value</strong> view
-          colours by category; <strong>Variance to objective</strong> and <strong>What
-          changed</strong> unlock as soon as their field is added; and each extra measure or
-          category you add becomes a view of its own, named after your field.</p>
+          <p class="colonne">The view menu, at the bottom left, switches what the map shows. The
+          <strong>Value</strong> view colours by category; <strong>Variance to objective</strong> and
+          <strong>What changed</strong> unlock as soon as their field is added; and each extra measure
+          or category you add — up to two of each — becomes a view of its own, named after your
+          field.</p>
           <div class="cliches">
             <figure class="cliche">
   <img src="/assets/img/flow-globe/view-variance.webp" alt="Flat map in the Variance to objective view: corridors into Rotterdam in red where they run below plan, green where above." width="1400" height="860" loading="lazy" decoding="async">
-  <figcaption><strong>Variance to objective.</strong> Red runs below plan, green above; intensity is the size of the gap. Thickness is the gap itself.</figcaption>
+  <figcaption><strong>Variance to objective.</strong> Red runs below plan, green above; intensity is the size of the gap. Thickness stays the value.</figcaption>
 </figure>
             <figure class="cliche">
   <img src="/assets/img/flow-globe/view-change.webp" alt="Flat map in the What changed view: most corridors up in green, one down in red, one stable in amber, one new corridor in blue and one gone in violet." width="1400" height="860" loading="lazy" decoding="async">
@@ -122,9 +126,10 @@
           <h2>Read a place, read a flow</h2>
           <p class="colonne">Hover gives the essentials; a click pins the full card, which you can
           move out of the way. A place card gives inbound, outbound and net flow, its connections
-          and its rank. Turn on <strong>Dependency analysis</strong> and it adds how many places feed
-          it and how many it serves, and its top origins and destinations with their shares. And whenever a
-          destination depends on a single origin, the card says so.</p>
+          and its rank. Turn on <strong>Dependency analysis</strong>, in the Format pane, and it adds how
+          many places feed it and how many it serves, its top five origins and destinations with their
+          shares, and — with Premium — its concentration indices. And whenever a destination depends
+          on a single origin, the card says so.</p>
           <figure class="cliche">
   <img src="/assets/img/flow-globe/card-node.webp" alt="The detail card of Rotterdam: 129.9 k total activity, 55% of network activity, inbound and outbound bars, net flow, 6 connections, rank 1 of 16, top origins Shanghai 47%, Singapore 28%, Hamburg 8%." width="1400" height="860" loading="lazy" decoding="async">
   <figcaption>The place card for Rotterdam, with Dependency analysis on.</figcaption>
@@ -140,11 +145,11 @@
             <li class="fait"><h3>Levels that follow the zoom</h3>
               <p>Continents, countries, then cities and ports. Or fix the level yourself.</p></li>
             <li class="fait"><h3>Bundled corridors</h3>
-              <p>Flows that share an endpoint and a heading can travel together on a common trunk,
-              to untangle a hub.</p></li>
+              <p>In the Value view, flows that share an endpoint and a heading can travel together on
+              a common trunk, to untangle a hub.</p></li>
             <li class="fait"><h3>Keep what matters</h3>
-              <p>Show the largest routes only, set a minimum value, or keep just the corridors that
-              carry a chosen share of the volume.</p></li>
+              <p>Show the largest routes only, set a minimum value, or — with Premium — keep just the
+              corridors that carry a chosen share of the volume.</p></li>
             <li class="fait"><h3>Search</h3>
               <p>Type a place or a flow to find it, select it and fly to it — also the keyboard way
               into the map.</p></li>
@@ -175,8 +180,8 @@
           <div class="colonne">
             <p>The world map, the place database and the fonts are inside the visual. It makes no
             network call of any kind and declares no privileges, so it behaves the same in a locked-down
-            tenant as on a laptop without a connection. It is designed to Microsoft's certification
-            requirements; certification will be requested after publication.</p>
+            tenant as on a laptop without a connection — one of the conditions Microsoft sets for
+            certifying a visual.</p>
             <p>The <a href="/privacy/">privacy page</a> sets out what that means in detail.</p>
           </div>
         </div>
@@ -200,7 +205,7 @@
 <tr><td>Top origins and destinations of a place, with their shares</td><td><span class="plan">Free</span></td></tr>
 <tr><td>Single-origin alert — shown whatever the licence</td><td><span class="plan">Free</span></td></tr>
 <tr><td>Bundling, reciprocal flows split or netted, search, Top&nbsp;N, minimum value</td><td><span class="plan">Free</span></td></tr>
-<tr><td>Selection and cross-filtering, themes, high contrast, export, diagnostics</td><td><span class="plan">Free</span></td></tr>
+<tr><td>Selection and cross-filtering, themes, high contrast, screenshot mode, diagnostics</td><td><span class="plan">Free</span></td></tr>
 <tr><td>Variance to objective view</td><td><span class="plan plan--premium">Premium</span></td></tr>
 <tr><td>What changed view</td><td><span class="plan plan--premium">Premium</span></td></tr>
 <tr><td>Views on your extra measures and categories</td><td><span class="plan plan--premium">Premium</span></td></tr>
@@ -209,9 +214,9 @@
 </tbody></table></div>
           <div class="colonne">
             <p>A report never breaks. When a reader's licence does not cover a Premium view, the report
-            opens in the Value view: every flow stays on the map, only the Premium views and indices
-            are withheld, and the visual says so. While editing, the author is told what those
-            readers will see.</p>
+            opens in the Value view: only the Premium views, indices and filter are withheld, and the
+            visual says so. While editing, the visual tells the author that readers without a licence
+            will see the free equivalents.</p>
             <p class="fin">Plans and prices will be published with the AppSource release.</p>
           </div>
         </div>
@@ -229,7 +234,8 @@
               <p>Optional hatching and dots mark unfavourable, falling and missing flows as well as
               colour does, and they switch on by themselves in high-contrast mode.</p></li>
             <li class="fait"><h3>Dark and light</h3>
-              <p>Two themes drawn for the page they sit on, both readable in print and in export.</p></li>
+              <p>Two themes drawn for the page they sit on: dark for a dark report, light for a light
+              one.</p></li>
             <li class="fait"><h3>Calm by request</h3>
               <p>Every control works from the keyboard, and animations stop when the system asks for
               reduced motion.</p></li>
