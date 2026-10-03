@@ -52,16 +52,16 @@
 <tr><td>Objective</td><td>Measure</td><td>Enables the <strong>Variance to objective</strong> view.</td></tr>
 <tr><td>Previous value</td><td>Measure</td><td>Enables the <strong>What changed</strong> view: appeared, gone, up, down or stable.</td></tr>
 <tr><td>Category</td><td>Column</td><td>Colours the flows in the Value view — a transport mode, a carrier, a product line.</td></tr>
-<tr><td>Tooltips</td><td>Measures</td><td>Extra figures shown in the hover and click cards of each flow. As many as you like.</td></tr>
+<tr><td>Tooltips</td><td>Measures</td><td>Extra figures shown in the hover and click cards of each flow. When several rows make one flow, the figure comes from one of them and is not added up. As many as you like.</td></tr>
 <tr><td>Origin latitude, Origin longitude,<br>Destination latitude, Destination longitude</td><td>Column</td><td>Optional. Exact coordinates. When they are given, they place the point; the name is only used as a label.</td></tr>
-<tr><td>Origin country, Destination country</td><td>Column</td><td>Optional. Your existing country column, to tell apart places that share a name — Toledo in Spain or in Ohio. No need to merge it into the name.</td></tr>
+<tr><td>Origin country, Destination country</td><td>Column</td><td>Optional. Your existing country column — or a US state, Canadian province, UK nation or Australian state — to tell apart places that share a name: Toledo in Spain or in Ohio. No need to merge it into the name.</td></tr>
 <tr><td>Origin display name, Destination display name</td><td>Column</td><td>Optional. The label to <em>show</em>. It is never used to locate the place: keep a technical code in Origin and put the readable name here.</td></tr>
-<tr><td>Extra measures (max 2)</td><td>Measures</td><td>Each one adds a view, named after it, in which that measure sets the colour — or, for a quantity, the thickness.</td></tr>
+<tr><td>Extra measures (max 2)</td><td>Measures</td><td>Each one adds a view, named after it, in which that measure sets the colour. Thickness stays the Value.</td></tr>
 <tr><td>Extra categories (max 2)</td><td>Columns</td><td>Each one adds a view in which colour follows that column.</td></tr>
 </tbody></table></div>
 
 <h2>How rows become flows</h2>
-<p>Every row that has an origin and a destination is part of a flow. Rows with the same origin and
+<p>Every row whose origin and destination can be placed is part of a flow. Rows with the same origin and
 the same destination are added together into <strong>one</strong> arc: their values, objectives and
 previous values are summed. At country or continent level, all the cities of a country merge the
 same way. The Diagnostics panel counts how many rows were merged at the current level.</p>
@@ -76,10 +76,11 @@ same way. The Diagnostics panel counts how many rows were merged at the current 
 </ul>
 
 <h2>Measures that should not be added up</h2>
-<p>The visual receives what Power&nbsp;BI aggregates. A stock level, a rate or an average
-must not be summed across rows: in the well, open the field's menu and choose <strong>Average</strong>
-(or write a measure that computes it). For extra measures, the <strong>Measure type</strong> setting
-also tells the visual how to combine them — see <a href="/docs/views/">The views</a>.</p>
+<p>The visual receives what Power&nbsp;BI aggregates, then adds up the Value of every row that falls
+into the same flow — across categories, coordinates, and all the cities of a country at country
+level. A stock level, a rate or an average cannot be added up: keep an additive measure in
+<strong>Value</strong>. A rate belongs in <strong>Extra measures</strong>, where the <strong>Measure
+type</strong> setting averages it, weighted by Value — see <a href="/docs/views/">The views</a>.</p>
 
 <h2>A previous value, in DAX</h2>
 <p>The Previous value well takes a measure, usually the same measure over an earlier period. With
@@ -92,13 +93,13 @@ report's own date slicer then sets both periods at once.</p>
 <ul>
   <li><strong>Rows.</strong> Power&nbsp;BI limits how many rows it sends to a visual. A row is one combination of every column placed in the wells — Origin, Destination, Category, coordinates,
   country and display-name columns, extra categories. Each column you add can multiply the rows, so
-  keep only the ones you use. When not all the data could be loaded, the visual says so.</li>
+  keep only the ones you use. The visual cannot always tell when Power&nbsp;BI held rows back.</li>
   <li><strong>Flows drawn.</strong> By default the 2,000 largest flows are drawn. The <em>Render
   limit</em> in the Format pane goes up to 30,000; beyond it, a notice says how many flows were left
   out, and the largest are always the ones kept.</li>
   <li><strong>Extra fields.</strong> Two extra measures and two extra categories at most.</li>
 </ul>
-<div class="note"><strong>A lighter model is a faster report.</strong> Every field in a well is sent to the visual and repeated in every selection it makes. A column you do not need on the map belongs in a Tooltips measure or in another visual.</div>
+<div class="note"><strong>A lighter model is a faster report.</strong> Every column in a well multiplies the rows the visual receives and works through. A column you do not need on the map belongs in a Tooltips measure or in another visual.</div>
 
         </div>
 <nav class="suite" aria-label="Chapters"><a href="/docs/getting-started/"><span>Previous</span>Getting started</a><a href="/docs/views/" style="text-align:right"><span>Next</span>The views</a></nav>
@@ -107,7 +108,7 @@ report's own date slicer then sets both periods at once.</p>
   </main>
 
   <footer class="pied">
-    <span>© 2026 Glyphein · last updated 27 September 2026</span>
+    <span>© 2026 Glyphein · last updated 3 October 2026</span>
     <nav>
       <a href="/">Home</a>
       <a href="/flow-globe/">Flow Globe</a>

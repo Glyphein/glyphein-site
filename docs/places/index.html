@@ -57,8 +57,9 @@ the visual, in the report, in a fraction of a second.</p>
 <p>Matching ignores case and accents. City-states such as Singapore or Monaco resolve to the city.</p>
 
 <h2>Places that share a name</h2>
-<p>When several real places share a name, the most populous is used, and a notice lists the names
-concerned. To choose another:</p>
+<p>When a name belongs to several real places, the most populous is used. If another of them is large
+enough to be the one you meant, a notice lists the name and the card marks it <em>Shared name</em>.
+To choose another:</p>
 <ul>
   <li>put your country column in <strong>Origin country</strong> or <strong>Destination
   country</strong>; or</li>
@@ -66,9 +67,11 @@ concerned. To choose another:</p>
   <li>give the coordinates.</li>
 </ul>
 <p>If the country you give contradicts the place found, the visual keeps the place it knows and says
-it lies <em>outside the given country or region</em>. A two-letter state code that matches nothing is
-not flagged: <code>Hamburg, PA</code> resolves to Hamburg, Germany. When in doubt, use the country
-column or coordinates.</p>
+it lies <em>outside the given country or region</em>. A two-letter code written after a comma is not
+flagged when the place is not in it, because the same codes are also provinces in other countries:
+<code>Hamburg, PA</code> resolves to Hamburg, Germany, without a notice. Written in full —
+<code>Hamburg, Pennsylvania</code> — or given in the country column, the mismatch is flagged. When in
+doubt, use the country column or coordinates.</p>
 
 <h2>Places it does not find</h2>
 <p>A name it cannot place — a warehouse code, a village, a misspelling — is listed in a notice,
@@ -99,7 +102,7 @@ the visual.</p>
   </main>
 
   <footer class="pied">
-    <span>© 2026 Glyphein · last updated 27 September 2026</span>
+    <span>© 2026 Glyphein · last updated 3 October 2026</span>
     <nav>
       <a href="/">Home</a>
       <a href="/flow-globe/">Flow Globe</a>

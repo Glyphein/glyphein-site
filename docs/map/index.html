@@ -69,13 +69,14 @@ country level.</p>
 <tr><td>Cover % of volume <span class="plan plan--premium">Premium</span></td><td>Keeps only the largest corridors that together carry the chosen share of the total. At 0 it is off.</td></tr>
 <tr><td>Render limit</td><td>In the Format pane. How many flows are drawn at most — 2,000 by default. The largest are always drawn first.</td></tr>
 </tbody></table></div>
-<p>Filtered flows are not lost: the panel at the top left counts them. A flow's card gives its share
+<p>Filtered flows are not lost: Diagnostics counts them, and the panel at the top left gives their
+number whenever it is open. A flow's card gives its share
 of the flows shown, and a place card adds its share of the full network when filters hide part of it.</p>
 
 <h2>Reciprocal flows</h2>
 <p>When two places send flows to each other, <strong>Split</strong> draws both arcs.
 <strong>Net</strong> replaces them with a single arc in the dominant direction, as thick as the
-difference; its card also gives the gross volume.</p>
+difference; its card gives the volume in each direction. Net needs a Value.</p>
 
 <h2>Bundling</h2>
 <p>Around a hub, many flows leave in the same direction. <strong>Bundle</strong> gathers flows that
@@ -85,7 +86,8 @@ the destination, or the busiest of the two. Paths become schematic, and the visu
 
 <h2>Cards</h2>
 <p>Hover is light, click is complete. A click pins the card; drag it by its header, or move it with
-the arrow keys, and close it with <kbd>Esc</kbd>.</p>
+the arrow keys once its header has focus (<kbd>Enter</kbd> puts it back), and close it with
+<kbd>Esc</kbd>.</p>
 <div class="cliches">
 <figure class="cliche">
   <img src="/assets/img/flow-globe/card-route.webp" alt="Hover card of the Shanghai to Rotterdam flow: 61.1 k, 26% of network shown, category Sea." width="1400" height="860" loading="lazy" decoding="async">
@@ -97,19 +99,21 @@ the arrow keys, and close it with <kbd>Esc</kbd>.</p>
 </figure>
 </div>
 <h3>A flow</h3>
-<p>On hover: origin → destination, the value and its share of the flows shown, and — in those
-views — the variance or the change. The click card adds the objective or the previous value, the
-distance, the rank among the flows shown, the category breakdown, the columns of the Tooltips well,
-and the list of other flows that pass under the pointer at the same spot. On a small visual, cards
-keep only the essentials.</p>
+<p>On hover: origin → destination, the value and its share of the flows shown, what the current
+view encodes — the category, the variance, the change or the extra field — and the columns of the
+Tooltips well. The click card adds the objective or the previous value, the distance, the rank among
+the flows shown, the full category breakdown, and the list of other flows that pass under the pointer
+at the same spot. On a small visual, cards keep only the essentials.</p>
 <h3>A place</h3>
-<p>Total activity and its share, inbound and outbound bars, internal flows if any. The click card
-adds the net flow, the number of connections and the rank.</p>
+<p>On hover: total activity and its share, the line of the current view, inbound and outbound bars in
+the Value view, and internal flows if any. The click card adds the bars in every view, the net flow,
+the number of connections and the rank.</p>
 <h3>Dependency analysis</h3>
-<p>Turned on in the Format pane, card <em>Nodes</em>. The click card of a place then adds, across the
-full network: the destinations it serves and the sources that feed it, its top five origins and
-destinations with their shares, and two indices <span class="plan plan--premium">Premium</span>: the share of its top five partners, as a
-percentage, and its inbound concentration (HHI), given as High, Medium or Low. Whenever a destination is fed by
+<p>Turned on in the Format pane, card <em>Nodes</em>; off by default. The click card of a place then
+adds, across the full network: the destinations it serves and the sources that feed it, its top five
+origins and destinations with their shares, and two indices <span class="plan plan--premium">Premium</span>: the share of its five largest
+flows in both directions (Top 5 concentration), when it has more than five, and its inbound
+concentration (HHI), given as High, Medium or Low. Whenever a destination is fed by
 a single origin, the card shows a <strong>Single origin</strong> alert, whether or not the analysis
 is on.</p>
 <h3>Report page tooltips</h3>
@@ -130,9 +134,12 @@ gives the highlighted amount.</p>
 
 <h2>Search</h2>
 <p>The magnifier opens a search box. Type part of a place or of a flow; the list updates as you
-type. Choose a result with the mouse or with <kbd>↑</kbd> <kbd>↓</kbd> and <kbd>Enter</kbd>: it is selected and, if it is drawn, the map flies to it. The first entry, <strong>Reset view</strong>, reframes the whole
-network. Search covers the flows that are kept; flows beyond the render limit are counted but not
-searched.</p>
+type. Choose a result with the mouse or with <kbd>↑</kbd> <kbd>↓</kbd> and <kbd>Enter</kbd>: the map
+flies to it — unless Lock view is on — and it is selected, as a click would. A place or flow hidden by
+your filters is listed as <em>not shown</em>; choosing it still filters the other visuals. The first
+entry, <strong>Reset view</strong>, returns to the default view of the globe and forgets the saved
+camera position. Search covers every place and every flow up to the render limit; names that were not
+recognised are listed but cannot be chosen.</p>
 
         </div>
 <nav class="suite" aria-label="Chapters"><a href="/docs/views/"><span>Previous</span>The views</a><a href="/docs/places/" style="text-align:right"><span>Next</span>Place names</a></nav>
@@ -141,7 +148,7 @@ searched.</p>
   </main>
 
   <footer class="pied">
-    <span>© 2026 Glyphein · last updated 27 September 2026</span>
+    <span>© 2026 Glyphein · last updated 3 October 2026</span>
     <nav>
       <a href="/">Home</a>
       <a href="/flow-globe/">Flow Globe</a>

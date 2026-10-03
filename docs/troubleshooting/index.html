@@ -42,28 +42,36 @@
         <p class="accroche">What each notice means, how to read the Diagnostics panel, and answers to common questions.</p>
         <div class="prose">
 
-<p>Flow Globe never drops data without saying so. A notice appears at the top left of the visual;
+<p>When Flow Globe sets data aside, it says so. A notice appears at the top left of the visual;
 click the panel to read it in full, with the rows concerned and what to do.</p>
 
 <h2>Notices</h2>
 <div class="tableau-cadre"><table class="tableau">
 <thead><tr><th scope="col">Notice</th><th scope="col">Meaning and remedy</th></tr></thead>
 <tbody>
-<tr><td>Add Origin, Destination and a Value to draw flows.</td><td>A required field is missing.</td></tr>
+<tr><td>Add Origin, Destination and a Value to draw flows.</td><td>Origin or Destination is missing.</td></tr>
 <tr><td>Add a Value measure to size the flows.</td><td>Each distinct combination of the fields counts as one until a Value is added.</td></tr>
 <tr><td>N unrecognised places</td><td>These names were not found. Use a country, city, port or ISO code, or coordinates. See <a href='/docs/places/'>Place names</a>.</td></tr>
 <tr><td>N shared place names</td><td>Several real places share these names; the largest was used. Add the country or the coordinates to pick another.</td></tr>
-<tr><td>N places outside the given country or region</td><td>The country column contradicts the place found. Correct it, or give coordinates.</td></tr>
+<tr><td>N places outside the given country or region</td><td>The country or region given — in the country column or after a comma — does not contain the place found. Correct it, or give coordinates.</td></tr>
 <tr><td>Render limit reached</td><td>More flows than the render limit. The largest are drawn. Raise the limit in the Format pane, or filter the report.</td></tr>
-<tr><td>Row cap reached</td><td>The data is larger than what Power BI sends to the visual. Filter the report or remove unused columns from the wells.</td></tr>
+<tr><td>Row cap reached</td><td>The visual stopped loading rows while Power BI still had more to send; some flows may be missing. Filter the report, or reduce the number of rows upstream.</td></tr>
 <tr><td>N rows have a Value that is not a number</td><td>Counted as 0. Usually a division by zero in the measure.</td></tr>
 <tr><td>N rows have no origin or no destination</td><td>Left out. Fill in both ends, or give their coordinates.</td></tr>
-<tr><td>N rows with unusable coordinates</td><td>Out of range, or not numbers. Use decimal degrees within ±90 / ±180.</td></tr>
-<tr><td>N routes have an objective on only part of their rows</td><td>Treated as having no objective. Give an objective to every row of those routes, or to none.</td></tr>
+<tr><td>N rows with unusable coordinates</td><td>Not numbers, out of range, only half of the pair, or (0, 0). These ends are placed by name instead. Use decimal degrees within ±90 / ±180, and leave missing cells empty.</td></tr>
+<tr><td>“Origin latitude” has no matching longitude</td><td>Only one coordinate field of a pair is in the wells: it is ignored, and places are located by name. Add the other field, or remove this one.</td></tr>
+<tr><td>N routes have an objective on only part of their rows</td><td>In the Variance to objective view: treated as having no objective. Give an objective to every row of those routes, or to none.</td></tr>
 <tr><td>Every row goes from a place to itself</td><td>Origin and Destination probably hold the same field. Check the wells.</td></tr>
 <tr><td>At the “Countries” level, every flow stays inside a single place</td><td>All flows are internal at this level. Choose a finer level in Group by, or switch Display mode to Auto.</td></tr>
 <tr><td>No flow matches the current filters.</td><td>Minimum value is above every flow. Lower it.</td></tr>
-<tr><td>Some views need a licence — showing values instead. No data is hidden.</td><td>Shown to readers whose licence does not cover the Premium views. The report falls back to the Value view.</td></tr>
+<tr><td>The field of the saved view is no longer available</td><td>The report was saved on a view whose field has been removed: Value is shown instead. Re-select a view, or restore the field in the model.</td></tr>
+<tr><td>“Measure”: the type … does not match what the column contains.</td><td>The Measure type set in the Format pane does not fit the data. The visual applies it anyway; check the setting.</td></tr>
+<tr><td>Colour thresholds ignored</td><td>The thresholds of a measure view must increase, and be written without a thousands separator.</td></tr>
+<tr><td>N bundled corridors — paths are schematic</td><td>Shared legs are simplified for readability. Endpoints, totals and filters are exact. Select a flow to see its own path.</td></tr>
+<tr><td>Bundling applies to the Value view only</td><td>Bundling is on, but the current view uses colour for something else. Switch to Value, or turn bundling off.</td></tr>
+<tr><td>Too many flows to animate them all</td><td>The smallest flows are drawn, but still.</td></tr>
+<tr><td>This report uses features that require a licence — they are replaced here by their free equivalents.</td><td>Shown to readers whose licence does not cover a Premium feature the report uses. The report opens in the Value view; Premium filters and indices are set aside.</td></tr>
+<tr><td>This report uses features that require a licence — readers without one will see their free equivalents.</td><td>Shown to the author, while editing, when the report uses a Premium feature.</td></tr>
 </tbody></table></div>
 
 <h2>The Diagnostics panel</h2>
@@ -72,15 +80,18 @@ version of the visual and counts what happened to your data, line by line:</p>
 <div class="tableau-cadre"><table class="tableau">
 <thead><tr><th scope="col">Line</th><th scope="col">What it counts</th></tr></thead>
 <tbody>
-<tr><td>Input rows</td><td>Rows received from Power BI, with those merged into a single flow and those going from a place to itself.</td></tr>
+<tr><td>Input rows</td><td>Rows received from Power BI; below it, rows merged into a single flow, rows whose two ends fall in one place at the current level, and rows going from a place to itself.</td></tr>
 <tr><td>Valid routes / Rendered routes</td><td>Flows found, and flows drawn.</td></tr>
 <tr><td>Hidden (render limit) / Filtered</td><td>Flows left out by the render limit, and by your filters.</td></tr>
 <tr><td>Share of volume shown</td><td>The part of the total the map is showing.</td></tr>
 <tr><td>Unresolved places</td><td>Names not found, listed.</td></tr>
 <tr><td>Outside the given country or region</td><td>Places that contradict their country column.</td></tr>
 <tr><td>Rows with no origin or no destination</td><td>Rows left out.</td></tr>
-<tr><td>Reciprocal flows · Bundling · Unique categories</td><td>How many of each.</td></tr>
-<tr><td>Cross-highlight · Selection</td><td>What the report sent to the visual, and what the visual sent back.</td></tr>
+<tr><td>Cross-highlight · Selection gesture</td><td>What the report sent to the visual, and the last selection the visual sent back, with the host's response time.</td></tr>
+<tr><td>Licence phase</td><td>Whether the licence check has answered, and whether the report is being read or edited.</td></tr>
+<tr><td>Unusable coordinates · Aggregated coords</td><td>Rows whose coordinates were refused, and places whose coordinates look like placeholders.</td></tr>
+<tr><td>Reciprocal flows · Bundling · Unique categories</td><td>How many of each; the bundling line appears when bundling is on.</td></tr>
+<tr><td>Recommendations</td><td>At the bottom, when they apply: render limit reached, high unresolved rate, more than 20 distinct categories.</td></tr>
 </tbody></table></div>
 <p>When you write to support, the version and a screenshot of this panel are the most useful things
 you can send.</p>
@@ -92,11 +103,12 @@ you can send.</p>
   value</em> and <em>Cover % of volume</em> in Options; the render limit; and the level of detail — two
   cities of the same country make no arc at country level.</dd>
   <dt>The numbers are larger than in my table.</dt>
-  <dd>A measure that should be averaged — a stock, a rate — is being summed. Set its aggregation to
-  Average in the well. See <a href="/docs/data/">Your data</a>.</dd>
-  <dt>A view button is greyed.</dt>
-  <dd>Its field is missing: hover the button to read which one. For a reader, it may also be a view
-  their licence does not include.</dd>
+  <dd>The visual adds up the rows of a flow — across categories, and across the cities of a country at
+  country level — so a stock or a rate gets summed. Keep an additive measure in Value, and put a rate
+  in Extra measures with Measure type set to Rate or average. See <a href="/docs/data/">Your data</a>.</dd>
+  <dt>A view is greyed in the view menu.</dt>
+  <dd>Its field is missing: the menu writes which one under its name. It may also be a view your
+  licence does not include — <em>Not included in your plan</em>.</dd>
   <dt>The map reframes when I click.</dt>
   <dd>Turn on <strong>Lock view</strong> in Options, or turn off <em>Fit on selection</em> in the
   Format pane card <em>Camera</em>.</dd>
@@ -114,7 +126,7 @@ you can send.</p>
   </main>
 
   <footer class="pied">
-    <span>© 2026 Glyphein · last updated 27 September 2026</span>
+    <span>© 2026 Glyphein · last updated 3 October 2026</span>
     <nav>
       <a href="/">Home</a>
       <a href="/flow-globe/">Flow Globe</a>
