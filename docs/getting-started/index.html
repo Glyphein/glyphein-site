@@ -69,13 +69,15 @@ no latitude or longitude to prepare. The chapter <a href="/docs/places/">Place n
 <h2>What you are looking at</h2>
 <dl>
   <dt>Arcs</dt><dd>One per origin–destination pair. Thickness is the value; the legend gives the range.
-  Small particles travel along each arc to show its direction.</dd>
+  By default, small particles travel along each arc to show its direction; <em>Animation</em> in
+  Options changes that.</dd>
   <dt>Places</dt><dd>A marker at each end. Its size is the place's total activity — everything that
   leaves it and arrives at it.</dd>
-  <dt>Legend</dt><dd>Bottom right. It says what colour and thickness mean in the current view. The
-  arrow at its top collapses it.</dd>
-  <dt>Level</dt><dd>Zoomed out, flows are grouped by country, or by continent; zoom in and they
-  resolve to cities and ports. Country labels are written in capitals.</dd>
+  <dt>Legend</dt><dd>Bottom right. It says what colour, thickness and marker size mean in the current
+  view. The chevron at its top right collapses it; on a small visual it starts collapsed.</dd>
+  <dt>Level</dt><dd>In the Auto display mode, zoomed out, flows are grouped by country, or by
+  continent; zoom in and they resolve to cities and ports. Countries and continents are labelled in
+  capitals.</dd>
 </dl>
 
 <h2>The controls</h2>
@@ -84,18 +86,18 @@ right edge, and notices appear at the top left.</p>
 <div class="tableau-cadre"><table class="tableau">
 <thead><tr><th scope="col">Control</th><th scope="col">What it does</th></tr></thead>
 <tbody>
-<tr><td>View buttons</td><td>Bottom left. <strong>Value</strong>, then <strong>Variance to objective</strong> and <strong>What changed</strong>, then one button per extra field. A view whose field is missing is shown greyed, with the reason. See <a href='/docs/views/'>The views</a>.</td></tr>
-<tr><td>Options</td><td>The sliders icon after the view buttons. Routes shown, minimum value, bundling, theme, level of detail, language, layers — and the Diagnostics panel. See <a href='/docs/settings/'>Settings</a>.</td></tr>
-<tr><td>Hide controls</td><td>The eye, bottom right. Hides the controls for a clean screenshot; click again to bring them back.</td></tr>
-<tr><td>Search</td><td>The magnifier. Type a place or a flow to find it, select it and centre the map on it.</td></tr>
-<tr><td>Bundle</td><td>Gathers flows that share an endpoint and a heading onto a common trunk, and ungroups them.</td></tr>
+<tr><td>View menu</td><td>Bottom left. A button named after the view on screen; it opens, above it, a menu of every view: <strong>Value</strong>, <strong>Variance to objective</strong> and <strong>What changed</strong>, then one entry per extra measure and per extra category. A view whose field is missing stays in the menu, greyed, with the field to add. See <a href='/docs/views/'>The views</a>.</td></tr>
+<tr><td>Options</td><td>The sliders icon, next to the view menu. Routes shown, minimum value, bundling, theme, level of detail, language, layers — and the Diagnostics panel. See <a href='/docs/settings/'>Settings</a>.</td></tr>
+<tr><td>Hide controls</td><td>The eye, bottom right. Hides the controls, the legend and the notices for a clean screenshot; the eye stays — click it again to bring them back.</td></tr>
+<tr><td>Search</td><td>The magnifier. Type a place or a flow to find it, select it and centre the map on it. Its first entry, <strong>Reset view</strong>, reframes the map.</td></tr>
+<tr><td>Bundle</td><td>Gathers flows that share an endpoint and a heading onto a common trunk, and ungroups them. Value view only; the <em>Bundle flows</em> slider in Options sets how far.</td></tr>
 <tr><td>3D | 2D</td><td>Globe or flat map.</td></tr>
 <tr><td>+ and −</td><td>Zoom in and out. On the right edge.</td></tr>
 </tbody></table></div>
 <p>On the map itself: drag to turn the globe or move the flat map, scroll to zoom. Hover a flow or
 a place for its figures; click it for the full card. Clicking also selects it, which filters the
 other visuals on the page — see <a href="/docs/map/">Map and cards</a>.</p>
-<div class="note"><strong>When the visual is narrow,</strong> controls give way one after the other, least useful first. The Options button is always the last to go.</div>
+<div class="note"><strong>When the visual is narrow,</strong> view names are shortened first; then controls give way one after the other: Bundle, Hide controls, Search, then 3D&nbsp;|&nbsp;2D. Options is the last to go, and the view menu always stays.</div>
 
 <h2>Next steps</h2>
 <ul>

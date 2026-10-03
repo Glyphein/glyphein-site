@@ -47,7 +47,7 @@ want to change while exploring. The <strong>Format pane</strong> of Power&nbsp;B
 author sets once. What you change in either is saved with the report.</p>
 
 <h2>Options</h2>
-<p>The sliders icon after the view buttons.</p>
+<p>The sliders icon next to the view menu, bottom left. The panel opens above it.</p>
 <figure class="cliche">
   <img src="/assets/img/flow-globe/options.webp" alt="The Options panel open on the left of the map: Routes shown, Minimum value, Cover % of volume, Bundle flows, Reciprocal flows, Lock view, Theme, Display mode, Group by, Language, Layers." width="1400" height="860" loading="lazy" decoding="async">
   <figcaption>The Options panel.</figcaption>
@@ -58,15 +58,15 @@ author sets once. What you change in either is saved with the report.</p>
 <tr><td>Routes shown</td><td>Keeps the N largest flows.</td></tr>
 <tr><td>Minimum value</td><td>Hides flows below a value.</td></tr>
 <tr><td>Cover % of volume <span class="plan plan--premium">Premium</span></td><td>Keeps the corridors that carry the chosen share of the volume.</td></tr>
-<tr><td>Bundle flows</td><td>How far bundling gathers flows, from 0 to 100&nbsp;%.</td></tr>
-<tr><td>Reciprocal flows</td><td>Split or Net.</td></tr>
+<tr><td>Bundle flows</td><td>How far bundling gathers flows, from 0 to 100&nbsp;%. Value view only.</td></tr>
+<tr><td>Reciprocal flows</td><td>Split or Net. Net needs a Value.</td></tr>
 <tr><td>Lock view</td><td>Stops automatic reframing.</td></tr>
-<tr><td>Auto-rotate</td><td>Turns the globe slowly. 3D only.</td></tr>
+<tr><td>Auto-rotate</td><td>Turns the globe slowly. 3D only, while the view is not locked.</td></tr>
 <tr><td>Theme</td><td>Dark or Light.</td></tr>
 <tr><td>Display mode</td><td>Auto: layers and detail follow the zoom. Manual: you choose.</td></tr>
 <tr><td>Group by</td><td>Cities/Ports, Countries or Continents. Manual mode only.</td></tr>
 <tr><td>Language</td><td>Auto follows the report; or pick one of ten.</td></tr>
-<tr><td>Layers</td><td>Legend, and in Manual mode: active countries, country names, graticule, borders, regions, labels.</td></tr>
+<tr><td>Layers</td><td>Legend, and in Manual mode: active countries, country names, graticule, borders, regions (with borders on), labels.</td></tr>
 <tr><td>Animation</td><td>Particles, Arrows or None.</td></tr>
 <tr><td>Diagnostics</td><td>Opens the Data diagnostics panel. See <a href='/docs/troubleshooting/'>Notices and diagnostics</a>.</td></tr>
 </tbody></table></div>
@@ -78,34 +78,38 @@ author sets once. What you change in either is saved with the report.</p>
 <tbody>
 <tr><td>Flows shown</td><td>Reciprocal flows · Show all routes · Routes shown · Minimum value · Cover % of volume</td></tr>
 <tr><td>Flows</td><td>Line colour · Animation · Direction mark at rest · Path · Bundle around · Render limit</td></tr>
-<tr><td>Nodes</td><td>Show · Labels · Size (%) · Dependency analysis · marker shape for cities, countries and continents</td></tr>
+<tr><td>Nodes</td><td>On/off switch in the card header · Labels · Size (%) · Dependency analysis · Shapes: Cities, Countries, Continents</td></tr>
 <tr><td>Legend</td><td>Show</td></tr>
 <tr><td>Value format</td><td>Display units · Decimal places · Regional format</td></tr>
 <tr><td>Variance to objective</td><td>Favourable and Unfavourable colours · Higher is favourable</td></tr>
-<tr><td>Category colours</td><td>One colour per category. Present when a Category is used, while its view is open.</td></tr>
-<tr><td>Colours — [measure]</td><td>Low, mid and high colours and thresholds of an extra measure's ramp.</td></tr>
+<tr><td>Category colours</td><td>One colour per category. Present in the Value view when a Category is used; in the view of an extra category, the card is named Colours — [category].</td></tr>
+<tr><td>Colours — [measure]</td><td>Low, mid and high values colours, and their thresholds, for the ramp of an extra measure. Present while that measure's view is open, for the Quantity and Rate or average types.</td></tr>
 <tr><td>Extra measures</td><td>Measure type of each extra measure.</td></tr>
 <tr><td>Base map</td><td>Theme · Accessibility patterns · Display mode · Group by · Borders · Regions · Active countries and their colour · Country names</td></tr>
 <tr><td>Camera</td><td>Lock view · Fit on load · Fit on selection</td></tr>
 <tr><td>Hover</td><td>Rendered by: Glyphein (built-in) or Power BI (report page tooltips)</td></tr>
 </tbody></table></div>
 <p>Some settings are greyed while <em>Display mode</em> is Auto, because the zoom decides them; switch
-to Manual to set them by hand.</p>
+to Manual to set them by hand. Others are greyed while a neighbour governs them — <em>Routes
+shown</em> under <em>Show all routes</em>, the two fits under <em>Lock view</em> — and each says
+why.</p>
 
 <h2>Languages</h2>
 <p>The visual speaks English, French, German, Spanish, Italian, Dutch, Portuguese, Japanese, Korean
 and Chinese, and writes country names in the same language. By default it follows the language of the
-report; <em>Language</em> in Options overrides it. Number separators follow <em>Regional format</em> in
-the Format pane.</p>
+report; <em>Language</em> in Options overrides it. Number separators follow <em>Regional format</em>, in
+the Format pane card <em>Value format</em>; on Auto, they follow the report, or the language chosen in
+Options.</p>
 
 <h2>Accessibility</h2>
 <ul>
   <li><strong>Keyboard.</strong> Every control is reached with <kbd>Tab</kbd> and used with
-  <kbd>Enter</kbd> or <kbd>Space</kbd>. <kbd>Esc</kbd> closes the detail card. The flows and places on
-  the map itself are reached through <strong>Search</strong>.</li>
+  <kbd>Enter</kbd> or <kbd>Space</kbd>; sliders move with the arrow keys, and so does the choice in
+  the view menu. <kbd>Esc</kbd> closes the detail card, the view menu and the search. The flows and
+  places on the map itself are reached through <strong>Search</strong>.</li>
   <li><strong>Patterns.</strong> <em>Accessibility patterns</em>, in the Format pane card <em>Base
-  map</em>, repeats colour with a second channel: hatching on unfavourable flows, dots where data is
-  missing.</li>
+  map</em>, repeats colour with a second channel: hatching on unfavourable or falling flows, dots where data
+  is missing.</li>
   <li><strong>High contrast.</strong> In a Windows high-contrast theme, the visual draws with the theme's
   colours and turns the patterns on by itself.</li>
   <li><strong>Reduced motion.</strong> When the system asks for reduced motion, the visual stops
